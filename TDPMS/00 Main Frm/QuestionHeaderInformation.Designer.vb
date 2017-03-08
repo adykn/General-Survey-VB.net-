@@ -1,9 +1,9 @@
-﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()> _
+﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()>
 Partial Class QuestionHeaderInformation
     Inherits System.Windows.Forms.Form
 
     'Form overrides dispose to clean up the component list.
-    <System.Diagnostics.DebuggerNonUserCode()> _
+    <System.Diagnostics.DebuggerNonUserCode()>
     Protected Overrides Sub Dispose(ByVal disposing As Boolean)
         Try
             If disposing AndAlso components IsNot Nothing Then
@@ -20,20 +20,28 @@ Partial Class QuestionHeaderInformation
     'NOTE: The following procedure is required by the Windows Form Designer
     'It can be modified using the Windows Form Designer.  
     'Do not modify it using the code editor.
-    <System.Diagnostics.DebuggerStepThrough()> _
+    <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(QuestionHeaderInformation))
         Me.Panel1 = New System.Windows.Forms.Panel()
-        Me.Button10 = New System.Windows.Forms.Button()
-        Me.Button9 = New System.Windows.Forms.Button()
-        Me.Button8 = New System.Windows.Forms.Button()
+        Me.Button12 = New System.Windows.Forms.Button()
+        Me.ttCondition = New System.Windows.Forms.TextBox()
+        Me.lltotal = New System.Windows.Forms.Label()
+        Me.Label7 = New System.Windows.Forms.Label()
+        Me.Button11 = New System.Windows.Forms.Button()
+        Me.CheckBox1 = New System.Windows.Forms.CheckBox()
         Me.dg = New System.Windows.Forms.DataGridView()
         Me.ContextMenuStrip1 = New System.Windows.Forms.ContextMenuStrip(Me.components)
         Me.EditToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.DeleteToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.OpenSurveyToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.NewEntryToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.Label3 = New System.Windows.Forms.Label()
+        Me.Label8 = New System.Windows.Forms.Label()
+        Me.Button10 = New System.Windows.Forms.Button()
+        Me.Button9 = New System.Windows.Forms.Button()
+        Me.Button8 = New System.Windows.Forms.Button()
         Me.Button6 = New System.Windows.Forms.Button()
         Me.Button5 = New System.Windows.Forms.Button()
         Me.Button4 = New System.Windows.Forms.Button()
@@ -47,16 +55,11 @@ Partial Class QuestionHeaderInformation
         Me.cc2 = New System.Windows.Forms.CheckBox()
         Me.cc1 = New System.Windows.Forms.CheckBox()
         Me.TextBox9 = New System.Windows.Forms.TextBox()
-        Me.ComboBox3 = New System.Windows.Forms.ComboBox()
-        Me.Label11 = New System.Windows.Forms.Label()
-        Me.ComboBox2 = New System.Windows.Forms.ComboBox()
         Me.TextBox8 = New System.Windows.Forms.TextBox()
         Me.TextBox6 = New System.Windows.Forms.TextBox()
         Me.TextBox7 = New System.Windows.Forms.TextBox()
         Me.TextBox4 = New System.Windows.Forms.TextBox()
         Me.TextBox5 = New System.Windows.Forms.TextBox()
-        Me.Label7 = New System.Windows.Forms.Label()
-        Me.Label8 = New System.Windows.Forms.Label()
         Me.Label9 = New System.Windows.Forms.Label()
         Me.Label10 = New System.Windows.Forms.Label()
         Me.Label4 = New System.Windows.Forms.Label()
@@ -66,13 +69,13 @@ Partial Class QuestionHeaderInformation
         Me.Button1 = New System.Windows.Forms.Button()
         Me.Button2 = New System.Windows.Forms.Button()
         Me.ttid = New System.Windows.Forms.TextBox()
-        Me.Label3 = New System.Windows.Forms.Label()
         Me.TextBox2 = New System.Windows.Forms.TextBox()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.TextBox1 = New System.Windows.Forms.TextBox()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.bbSave = New System.Windows.Forms.Button()
         Me.Button7 = New System.Windows.Forms.Button()
+        Me.BackgroundWorker1 = New System.ComponentModel.BackgroundWorker()
         Me.Panel1.SuspendLayout()
         CType(Me.dg, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.ContextMenuStrip1.SuspendLayout()
@@ -85,10 +88,18 @@ Partial Class QuestionHeaderInformation
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.Panel1.BackColor = System.Drawing.Color.White
         Me.Panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.Panel1.Controls.Add(Me.Button12)
+        Me.Panel1.Controls.Add(Me.ttCondition)
+        Me.Panel1.Controls.Add(Me.lltotal)
+        Me.Panel1.Controls.Add(Me.Label7)
+        Me.Panel1.Controls.Add(Me.Button11)
+        Me.Panel1.Controls.Add(Me.CheckBox1)
+        Me.Panel1.Controls.Add(Me.dg)
+        Me.Panel1.Controls.Add(Me.Label3)
+        Me.Panel1.Controls.Add(Me.Label8)
         Me.Panel1.Controls.Add(Me.Button10)
         Me.Panel1.Controls.Add(Me.Button9)
         Me.Panel1.Controls.Add(Me.Button8)
-        Me.Panel1.Controls.Add(Me.dg)
         Me.Panel1.Controls.Add(Me.Button6)
         Me.Panel1.Controls.Add(Me.Button5)
         Me.Panel1.Controls.Add(Me.Button4)
@@ -102,16 +113,11 @@ Partial Class QuestionHeaderInformation
         Me.Panel1.Controls.Add(Me.cc2)
         Me.Panel1.Controls.Add(Me.cc1)
         Me.Panel1.Controls.Add(Me.TextBox9)
-        Me.Panel1.Controls.Add(Me.ComboBox3)
-        Me.Panel1.Controls.Add(Me.Label11)
-        Me.Panel1.Controls.Add(Me.ComboBox2)
         Me.Panel1.Controls.Add(Me.TextBox8)
         Me.Panel1.Controls.Add(Me.TextBox6)
         Me.Panel1.Controls.Add(Me.TextBox7)
         Me.Panel1.Controls.Add(Me.TextBox4)
         Me.Panel1.Controls.Add(Me.TextBox5)
-        Me.Panel1.Controls.Add(Me.Label7)
-        Me.Panel1.Controls.Add(Me.Label8)
         Me.Panel1.Controls.Add(Me.Label9)
         Me.Panel1.Controls.Add(Me.Label10)
         Me.Panel1.Controls.Add(Me.Label4)
@@ -121,7 +127,6 @@ Partial Class QuestionHeaderInformation
         Me.Panel1.Controls.Add(Me.Button1)
         Me.Panel1.Controls.Add(Me.Button2)
         Me.Panel1.Controls.Add(Me.ttid)
-        Me.Panel1.Controls.Add(Me.Label3)
         Me.Panel1.Controls.Add(Me.TextBox2)
         Me.Panel1.Controls.Add(Me.Label2)
         Me.Panel1.Controls.Add(Me.TextBox1)
@@ -132,6 +137,137 @@ Partial Class QuestionHeaderInformation
         Me.Panel1.Name = "Panel1"
         Me.Panel1.Size = New System.Drawing.Size(728, 436)
         Me.Panel1.TabIndex = 2
+        '
+        'Button12
+        '
+        Me.Button12.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.Button12.BackColor = System.Drawing.Color.Red
+        Me.Button12.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.Button12.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Button12.ForeColor = System.Drawing.Color.White
+        Me.Button12.Location = New System.Drawing.Point(701, 51)
+        Me.Button12.Name = "Button12"
+        Me.Button12.Size = New System.Drawing.Size(21, 22)
+        Me.Button12.TabIndex = 95
+        Me.Button12.Text = "X"
+        Me.Button12.UseVisualStyleBackColor = False
+        '
+        'ttCondition
+        '
+        Me.ttCondition.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.ttCondition.Location = New System.Drawing.Point(390, 52)
+        Me.ttCondition.Name = "ttCondition"
+        Me.ttCondition.Size = New System.Drawing.Size(310, 20)
+        Me.ttCondition.TabIndex = 94
+        Me.ttCondition.Text = "1=1"
+        '
+        'lltotal
+        '
+        Me.lltotal.AutoSize = True
+        Me.lltotal.Location = New System.Drawing.Point(341, 362)
+        Me.lltotal.Name = "lltotal"
+        Me.lltotal.Size = New System.Drawing.Size(19, 13)
+        Me.lltotal.TabIndex = 93
+        Me.lltotal.Text = "00"
+        '
+        'Label7
+        '
+        Me.Label7.AutoSize = True
+        Me.Label7.Location = New System.Drawing.Point(304, 362)
+        Me.Label7.Name = "Label7"
+        Me.Label7.Size = New System.Drawing.Size(31, 13)
+        Me.Label7.TabIndex = 92
+        Me.Label7.Text = "Total"
+        '
+        'Button11
+        '
+        Me.Button11.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
+        Me.Button11.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.Button11.Location = New System.Drawing.Point(118, 389)
+        Me.Button11.Name = "Button11"
+        Me.Button11.Size = New System.Drawing.Size(157, 41)
+        Me.Button11.TabIndex = 91
+        Me.Button11.Text = "Fill Tracker"
+        Me.Button11.UseVisualStyleBackColor = True
+        '
+        'CheckBox1
+        '
+        Me.CheckBox1.AutoSize = True
+        Me.CheckBox1.Location = New System.Drawing.Point(193, 275)
+        Me.CheckBox1.Name = "CheckBox1"
+        Me.CheckBox1.Size = New System.Drawing.Size(82, 17)
+        Me.CheckBox1.TabIndex = 90
+        Me.CheckBox1.Text = "start Survey"
+        Me.CheckBox1.UseVisualStyleBackColor = True
+        '
+        'dg
+        '
+        Me.dg.AllowUserToAddRows = False
+        Me.dg.AllowUserToDeleteRows = False
+        Me.dg.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
+            Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.dg.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill
+        Me.dg.BackgroundColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(192, Byte), Integer))
+        Me.dg.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        Me.dg.ContextMenuStrip = Me.ContextMenuStrip1
+        Me.dg.GridColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(192, Byte), Integer), CType(CType(128, Byte), Integer))
+        Me.dg.Location = New System.Drawing.Point(390, 75)
+        Me.dg.Name = "dg"
+        Me.dg.ReadOnly = True
+        Me.dg.RowHeadersVisible = False
+        Me.dg.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
+        Me.dg.Size = New System.Drawing.Size(332, 355)
+        Me.dg.TabIndex = 44
+        '
+        'ContextMenuStrip1
+        '
+        Me.ContextMenuStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.EditToolStripMenuItem, Me.DeleteToolStripMenuItem, Me.OpenSurveyToolStripMenuItem, Me.NewEntryToolStripMenuItem})
+        Me.ContextMenuStrip1.Name = "ContextMenuStrip1"
+        Me.ContextMenuStrip1.Size = New System.Drawing.Size(142, 92)
+        '
+        'EditToolStripMenuItem
+        '
+        Me.EditToolStripMenuItem.Name = "EditToolStripMenuItem"
+        Me.EditToolStripMenuItem.Size = New System.Drawing.Size(141, 22)
+        Me.EditToolStripMenuItem.Text = "Edit"
+        '
+        'DeleteToolStripMenuItem
+        '
+        Me.DeleteToolStripMenuItem.Name = "DeleteToolStripMenuItem"
+        Me.DeleteToolStripMenuItem.Size = New System.Drawing.Size(141, 22)
+        Me.DeleteToolStripMenuItem.Text = "Delete"
+        '
+        'OpenSurveyToolStripMenuItem
+        '
+        Me.OpenSurveyToolStripMenuItem.Name = "OpenSurveyToolStripMenuItem"
+        Me.OpenSurveyToolStripMenuItem.Size = New System.Drawing.Size(141, 22)
+        Me.OpenSurveyToolStripMenuItem.Text = "Open Survey"
+        '
+        'NewEntryToolStripMenuItem
+        '
+        Me.NewEntryToolStripMenuItem.Name = "NewEntryToolStripMenuItem"
+        Me.NewEntryToolStripMenuItem.Size = New System.Drawing.Size(141, 22)
+        Me.NewEntryToolStripMenuItem.Text = "New Entry"
+        '
+        'Label3
+        '
+        Me.Label3.AutoSize = True
+        Me.Label3.Location = New System.Drawing.Point(12, 247)
+        Me.Label3.Name = "Label3"
+        Me.Label3.Size = New System.Drawing.Size(63, 13)
+        Me.Label3.TabIndex = 89
+        Me.Label3.Text = "Sub Village "
+        '
+        'Label8
+        '
+        Me.Label8.AutoSize = True
+        Me.Label8.Location = New System.Drawing.Point(12, 125)
+        Me.Label8.Name = "Label8"
+        Me.Label8.Size = New System.Drawing.Size(49, 13)
+        Me.Label8.TabIndex = 62
+        Me.Label8.Text = "Province"
         '
         'Button10
         '
@@ -168,59 +304,9 @@ Partial Class QuestionHeaderInformation
         Me.Button8.Text = "Close"
         Me.Button8.UseVisualStyleBackColor = False
         '
-        'dg
-        '
-        Me.dg.AllowUserToAddRows = False
-        Me.dg.AllowUserToDeleteRows = False
-        Me.dg.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
-            Or System.Windows.Forms.AnchorStyles.Left) _
-            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.dg.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill
-        Me.dg.BackgroundColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(192, Byte), Integer))
-        Me.dg.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.dg.ContextMenuStrip = Me.ContextMenuStrip1
-        Me.dg.GridColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(192, Byte), Integer), CType(CType(128, Byte), Integer))
-        Me.dg.Location = New System.Drawing.Point(390, 51)
-        Me.dg.Name = "dg"
-        Me.dg.ReadOnly = True
-        Me.dg.RowHeadersVisible = False
-        Me.dg.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
-        Me.dg.Size = New System.Drawing.Size(332, 379)
-        Me.dg.TabIndex = 44
-        '
-        'ContextMenuStrip1
-        '
-        Me.ContextMenuStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.EditToolStripMenuItem, Me.DeleteToolStripMenuItem, Me.OpenSurveyToolStripMenuItem, Me.NewEntryToolStripMenuItem})
-        Me.ContextMenuStrip1.Name = "ContextMenuStrip1"
-        Me.ContextMenuStrip1.Size = New System.Drawing.Size(142, 92)
-        '
-        'EditToolStripMenuItem
-        '
-        Me.EditToolStripMenuItem.Name = "EditToolStripMenuItem"
-        Me.EditToolStripMenuItem.Size = New System.Drawing.Size(141, 22)
-        Me.EditToolStripMenuItem.Text = "Edit"
-        '
-        'DeleteToolStripMenuItem
-        '
-        Me.DeleteToolStripMenuItem.Name = "DeleteToolStripMenuItem"
-        Me.DeleteToolStripMenuItem.Size = New System.Drawing.Size(141, 22)
-        Me.DeleteToolStripMenuItem.Text = "Delete"
-        '
-        'OpenSurveyToolStripMenuItem
-        '
-        Me.OpenSurveyToolStripMenuItem.Name = "OpenSurveyToolStripMenuItem"
-        Me.OpenSurveyToolStripMenuItem.Size = New System.Drawing.Size(141, 22)
-        Me.OpenSurveyToolStripMenuItem.Text = "Open Survey"
-        '
-        'NewEntryToolStripMenuItem
-        '
-        Me.NewEntryToolStripMenuItem.Name = "NewEntryToolStripMenuItem"
-        Me.NewEntryToolStripMenuItem.Size = New System.Drawing.Size(141, 22)
-        Me.NewEntryToolStripMenuItem.Text = "New Entry"
-        '
         'Button6
         '
-        Me.Button6.Location = New System.Drawing.Point(125, 316)
+        Me.Button6.Location = New System.Drawing.Point(99, 314)
         Me.Button6.Name = "Button6"
         Me.Button6.Size = New System.Drawing.Size(106, 35)
         Me.Button6.TabIndex = 84
@@ -240,7 +326,6 @@ Partial Class QuestionHeaderInformation
         'Button4
         '
         Me.Button4.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        'Me.Button4.BackgroundImage = Global.TDPMS.My.Resources.Resources.download
         Me.Button4.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.Button4.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.Button4.Location = New System.Drawing.Point(675, 4)
@@ -308,7 +393,6 @@ Partial Class QuestionHeaderInformation
         'cc3
         '
         Me.cc3.AutoSize = True
-        Me.cc3.Enabled = False
         Me.cc3.Location = New System.Drawing.Point(325, 124)
         Me.cc3.Name = "cc3"
         Me.cc3.Size = New System.Drawing.Size(15, 14)
@@ -318,7 +402,6 @@ Partial Class QuestionHeaderInformation
         'cc2
         '
         Me.cc2.AutoSize = True
-        Me.cc2.Enabled = False
         Me.cc2.Location = New System.Drawing.Point(325, 101)
         Me.cc2.Name = "cc2"
         Me.cc2.Size = New System.Drawing.Size(15, 14)
@@ -328,7 +411,6 @@ Partial Class QuestionHeaderInformation
         'cc1
         '
         Me.cc1.AutoSize = True
-        Me.cc1.Enabled = False
         Me.cc1.Location = New System.Drawing.Point(325, 78)
         Me.cc1.Name = "cc1"
         Me.cc1.Size = New System.Drawing.Size(15, 14)
@@ -341,33 +423,6 @@ Partial Class QuestionHeaderInformation
         Me.TextBox9.Name = "TextBox9"
         Me.TextBox9.Size = New System.Drawing.Size(194, 20)
         Me.TextBox9.TabIndex = 8
-        '
-        'ComboBox3
-        '
-        Me.ComboBox3.FormattingEnabled = True
-        Me.ComboBox3.Items.AddRange(New Object() {"City / Village", "Oranised tented camps", "Spontaneous camps", "Communal buliding"})
-        Me.ComboBox3.Location = New System.Drawing.Point(125, 289)
-        Me.ComboBox3.Name = "ComboBox3"
-        Me.ComboBox3.Size = New System.Drawing.Size(193, 21)
-        Me.ComboBox3.TabIndex = 10
-        '
-        'Label11
-        '
-        Me.Label11.AutoSize = True
-        Me.Label11.Location = New System.Drawing.Point(12, 291)
-        Me.Label11.Name = "Label11"
-        Me.Label11.Size = New System.Drawing.Size(94, 13)
-        Me.Label11.TabIndex = 72
-        Me.Label11.Text = "Type of settlement"
-        '
-        'ComboBox2
-        '
-        Me.ComboBox2.FormattingEnabled = True
-        Me.ComboBox2.Items.AddRange(New Object() {"Damage to bridge", "Damage to culverts", "Damage to access roads", "Other", "N/A"})
-        Me.ComboBox2.Location = New System.Drawing.Point(125, 264)
-        Me.ComboBox2.Name = "ComboBox2"
-        Me.ComboBox2.Size = New System.Drawing.Size(193, 21)
-        Me.ComboBox2.TabIndex = 9
         '
         'TextBox8
         '
@@ -404,24 +459,6 @@ Partial Class QuestionHeaderInformation
         Me.TextBox5.Size = New System.Drawing.Size(194, 20)
         Me.TextBox5.TabIndex = 4
         '
-        'Label7
-        '
-        Me.Label7.AutoSize = True
-        Me.Label7.Location = New System.Drawing.Point(12, 266)
-        Me.Label7.Name = "Label7"
-        Me.Label7.Size = New System.Drawing.Size(110, 13)
-        Me.Label7.TabIndex = 63
-        Me.Label7.Text = "Obstruction to access"
-        '
-        'Label8
-        '
-        Me.Label8.AutoSize = True
-        Me.Label8.Location = New System.Drawing.Point(12, 243)
-        Me.Label8.Name = "Label8"
-        Me.Label8.Size = New System.Drawing.Size(49, 13)
-        Me.Label8.TabIndex = 62
-        Me.Label8.Text = "Province"
-        '
         'Label9
         '
         Me.Label9.AutoSize = True
@@ -434,7 +471,7 @@ Partial Class QuestionHeaderInformation
         'Label10
         '
         Me.Label10.AutoSize = True
-        Me.Label10.Location = New System.Drawing.Point(12, 198)
+        Me.Label10.Location = New System.Drawing.Point(12, 197)
         Me.Label10.Name = "Label10"
         Me.Label10.Size = New System.Drawing.Size(73, 13)
         Me.Label10.TabIndex = 60
@@ -443,7 +480,7 @@ Partial Class QuestionHeaderInformation
         'Label4
         '
         Me.Label4.AutoSize = True
-        Me.Label4.Location = New System.Drawing.Point(12, 172)
+        Me.Label4.Location = New System.Drawing.Point(12, 174)
         Me.Label4.Name = "Label4"
         Me.Label4.Size = New System.Drawing.Size(79, 13)
         Me.Label4.TabIndex = 59
@@ -461,7 +498,7 @@ Partial Class QuestionHeaderInformation
         'Label6
         '
         Me.Label6.AutoSize = True
-        Me.Label6.Location = New System.Drawing.Point(12, 126)
+        Me.Label6.Location = New System.Drawing.Point(12, 103)
         Me.Label6.Name = "Label6"
         Me.Label6.Size = New System.Drawing.Size(80, 13)
         Me.Label6.TabIndex = 57
@@ -500,15 +537,6 @@ Partial Class QuestionHeaderInformation
         Me.ttid.Size = New System.Drawing.Size(31, 20)
         Me.ttid.TabIndex = 52
         '
-        'Label3
-        '
-        Me.Label3.AutoSize = True
-        Me.Label3.Location = New System.Drawing.Point(12, 104)
-        Me.Label3.Name = "Label3"
-        Me.Label3.Size = New System.Drawing.Size(95, 13)
-        Me.Label3.TabIndex = 51
-        Me.Label3.Text = "Recording Agency"
-        '
         'TextBox2
         '
         Me.TextBox2.Location = New System.Drawing.Point(125, 75)
@@ -543,7 +571,7 @@ Partial Class QuestionHeaderInformation
         '
         'bbSave
         '
-        Me.bbSave.Location = New System.Drawing.Point(232, 316)
+        Me.bbSave.Location = New System.Drawing.Point(206, 314)
         Me.bbSave.Name = "bbSave"
         Me.bbSave.Size = New System.Drawing.Size(114, 35)
         Me.bbSave.TabIndex = 11
@@ -585,37 +613,29 @@ Partial Class QuestionHeaderInformation
     Friend WithEvents Button1 As System.Windows.Forms.Button
     Friend WithEvents Button2 As System.Windows.Forms.Button
     Friend WithEvents ttid As System.Windows.Forms.TextBox
-    Friend WithEvents Label3 As System.Windows.Forms.Label
     Friend WithEvents TextBox2 As System.Windows.Forms.TextBox
     Friend WithEvents Label2 As System.Windows.Forms.Label
     Friend WithEvents TextBox1 As System.Windows.Forms.TextBox
     Friend WithEvents Label1 As System.Windows.Forms.Label
     Friend WithEvents bbSave As System.Windows.Forms.Button
     Friend WithEvents dg As System.Windows.Forms.DataGridView
-    Friend WithEvents TextBox9 As System.Windows.Forms.TextBox
-    Friend WithEvents ComboBox3 As System.Windows.Forms.ComboBox
-    Friend WithEvents Label11 As System.Windows.Forms.Label
-    Friend WithEvents ComboBox2 As System.Windows.Forms.ComboBox
     Friend WithEvents TextBox8 As System.Windows.Forms.TextBox
     Friend WithEvents TextBox6 As System.Windows.Forms.TextBox
     Friend WithEvents TextBox7 As System.Windows.Forms.TextBox
     Friend WithEvents TextBox4 As System.Windows.Forms.TextBox
     Friend WithEvents TextBox5 As System.Windows.Forms.TextBox
-    Friend WithEvents Label7 As System.Windows.Forms.Label
     Friend WithEvents Label8 As System.Windows.Forms.Label
     Friend WithEvents Label9 As System.Windows.Forms.Label
     Friend WithEvents Label10 As System.Windows.Forms.Label
     Friend WithEvents Label4 As System.Windows.Forms.Label
     Friend WithEvents Label5 As System.Windows.Forms.Label
     Friend WithEvents Label6 As System.Windows.Forms.Label
-    Friend WithEvents TextBox3 As System.Windows.Forms.TextBox
     Friend WithEvents ContextMenuStrip1 As System.Windows.Forms.ContextMenuStrip
     Friend WithEvents EditToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents DeleteToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents cc5 As System.Windows.Forms.CheckBox
     Friend WithEvents cc6 As System.Windows.Forms.CheckBox
     Friend WithEvents cc7 As System.Windows.Forms.CheckBox
-    Friend WithEvents cc8 As System.Windows.Forms.CheckBox
     Friend WithEvents cc4 As System.Windows.Forms.CheckBox
     Friend WithEvents cc3 As System.Windows.Forms.CheckBox
     Friend WithEvents cc2 As System.Windows.Forms.CheckBox
@@ -630,4 +650,15 @@ Partial Class QuestionHeaderInformation
     Friend WithEvents Button8 As System.Windows.Forms.Button
     Friend WithEvents Button9 As System.Windows.Forms.Button
     Friend WithEvents Button10 As System.Windows.Forms.Button
+    Friend WithEvents TextBox3 As Windows.Forms.TextBox
+    Friend WithEvents Label3 As Windows.Forms.Label
+    Friend WithEvents cc8 As Windows.Forms.CheckBox
+    Friend WithEvents TextBox9 As Windows.Forms.TextBox
+    Friend WithEvents CheckBox1 As Windows.Forms.CheckBox
+    Friend WithEvents Button11 As Windows.Forms.Button
+    Friend WithEvents BackgroundWorker1 As ComponentModel.BackgroundWorker
+    Friend WithEvents lltotal As Windows.Forms.Label
+    Friend WithEvents Label7 As Windows.Forms.Label
+    Friend WithEvents ttCondition As Windows.Forms.TextBox
+    Friend WithEvents Button12 As Windows.Forms.Button
 End Class

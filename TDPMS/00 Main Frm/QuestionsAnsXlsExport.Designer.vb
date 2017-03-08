@@ -41,6 +41,7 @@ Partial Class QuestionsAnsXlsExport
         Me.Panel3 = New System.Windows.Forms.Panel()
         Me.ll2 = New System.Windows.Forms.Label()
         Me.FolderBrowserDialog1 = New System.Windows.Forms.FolderBrowserDialog()
+        Me.ttcondition = New System.Windows.Forms.TextBox()
         Me.Panel1.SuspendLayout()
         CType(Me.dg1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.dg, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -52,6 +53,7 @@ Partial Class QuestionsAnsXlsExport
             Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.Panel1.BackColor = System.Drawing.Color.White
+        Me.Panel1.Controls.Add(Me.ttcondition)
         Me.Panel1.Controls.Add(Me.CheckBox3)
         Me.Panel1.Controls.Add(Me.Label2)
         Me.Panel1.Controls.Add(Me.CheckBox2)
@@ -262,6 +264,19 @@ Partial Class QuestionsAnsXlsExport
         Me.ll2.TabIndex = 51
         Me.ll2.Text = "Multiple Ans Question"
         '
+        'ttcondition
+        '
+        Me.ttcondition.Anchor = System.Windows.Forms.AnchorStyles.Top
+        Me.ttcondition.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.ttcondition.Font = New System.Drawing.Font("Franklin Gothic Medium", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.ttcondition.ForeColor = System.Drawing.Color.ForestGreen
+        Me.ttcondition.Location = New System.Drawing.Point(137, 416)
+        Me.ttcondition.Name = "ttcondition"
+        Me.ttcondition.Size = New System.Drawing.Size(225, 26)
+        Me.ttcondition.TabIndex = 66
+        Me.ttcondition.Text = "1=1"
+        Me.ttcondition.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
+        '
         'QuestionsAnsXlsExport
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -296,4 +311,5 @@ Partial Class QuestionsAnsXlsExport
     Friend WithEvents Label1 As System.Windows.Forms.Label
     Friend WithEvents CheckBox3 As System.Windows.Forms.CheckBox
     Friend WithEvents Label2 As System.Windows.Forms.Label
+    Friend WithEvents ttcondition As Windows.Forms.TextBox
 End Class

@@ -93,7 +93,10 @@ Public Class Excel4d
             .Quit()
         End With
 
+        releaseObject(ExcelApp.ActiveWorkbook)
+        releaseObject(ExcelApp)
     End Sub
+
     Sub SaveWB(wb As Excel.Workbook)
         If wb.FileFormat = Excel.XlFileFormat.xlExcel9795 Then
             wb.SaveAs(wb.FullName, Excel.XlFileFormat.xlWorkbookNormal)
@@ -101,7 +104,7 @@ Public Class Excel4d
             wb.Save()
         End If
     End Sub
-    Sub MakeXslFile(d As DataSet, directry As String, fileName As String, KillProcess As Boolean, OpenXslFile As Boolean, Chart As Boolean)
+    Sub MakeXslFile(d As DataSet, directry As String, fileName As String, KillProcess As Boolean, OpenXslFile As Boolean, Chart As Boolean, Optional formatCells As Boolean = False)
 
         Try
             Dim CelCount = 0
@@ -132,67 +135,68 @@ Public Class Excel4d
                     str += "A"
                 Next
                 Dim temp As String = IIf(CelCount > 26, str & Chr(65 + CelCount - 1 - 26), Chr(65 + CelCount - 1))
-                Try
+                If formatCells Then
+                    Try
 
+                        With GetActiveSheet.Range("A1:" & temp & +(1).ToString)
+                            .Interior.ColorIndex = 1 '<~~ Cell Back Color Black
+                            With .Font
+                                .ColorIndex = 2 '<~~ Font Color White
+                                .Size = 8
+                                .Name = "Tahoma"
+                                '.Underline = Excel.XlUnderlineStyle.xlUnderlineStyleSingle
+                                .Bold = True
+                            End With
 
-                    With GetActiveSheet.Range("A1:" & temp & +(1).ToString)
-                        .Interior.ColorIndex = 1 '<~~ Cell Back Color Black
-                        With .Font
-                            .ColorIndex = 2 '<~~ Font Color White
-                            .Size = 8
-                            .Name = "Tahoma"
-                            '.Underline = Excel.XlUnderlineStyle.xlUnderlineStyleSingle
-                            .Bold = True
                         End With
+                    Catch ex As Exception
+                        MsgBox(ex.Message)
+                    End Try
 
-                    End With
-                Catch ex As Exception
-                    MsgBox(ex.Message)
-                End Try
-                Try
-                    GetActiveSheet.Columns("A:" & temp).EntireColumn.AutoFit()
-                    With GetActiveSheet.Range("A1:" & temp + (RowCount + 1).ToString)
-                        With .Borders(Excel.XlBordersIndex.xlEdgeLeft)
-                            .LineStyle = Excel.XlLineStyle.xlDouble
-                            .ColorIndex = 0
-                            .TintAndShade = 0
-                            .Weight = Excel.XlBorderWeight.xlThin
+                    Try
+                        GetActiveSheet.Columns("A:" & temp).EntireColumn.AutoFit()
+                        With GetActiveSheet.Range("A1:" & temp + (RowCount + 1).ToString)
+                            With .Borders(Excel.XlBordersIndex.xlEdgeLeft)
+                                .LineStyle = Excel.XlLineStyle.xlDouble
+                                .ColorIndex = 0
+                                .TintAndShade = 0
+                                .Weight = Excel.XlBorderWeight.xlThin
+                            End With
+                            With .Borders(Excel.XlBordersIndex.xlEdgeTop)
+                                .LineStyle = Excel.XlLineStyle.xlContinuous
+                                .ColorIndex = 0
+                                .TintAndShade = 0
+                                .Weight = Excel.XlBorderWeight.xlThin
+                            End With
+                            With .Borders(Excel.XlBordersIndex.xlEdgeBottom)
+                                .LineStyle = Excel.XlLineStyle.xlContinuous
+                                .ColorIndex = 0
+                                .TintAndShade = 0
+                                .Weight = Excel.XlBorderWeight.xlThin
+                            End With
+                            With .Borders(Excel.XlBordersIndex.xlEdgeRight)
+                                .LineStyle = Excel.XlLineStyle.xlContinuous
+                                .ColorIndex = 0
+                                .TintAndShade = 0
+                                .Weight = Excel.XlBorderWeight.xlThin
+                            End With
+                            With .Borders(Excel.XlBordersIndex.xlInsideVertical)
+                                .LineStyle = Excel.XlLineStyle.xlContinuous
+                                .ColorIndex = 0
+                                .TintAndShade = 0
+                                .Weight = Excel.XlBorderWeight.xlThin
+                            End With
+                            With .Borders(Excel.XlBordersIndex.xlInsideHorizontal)
+                                .LineStyle = Excel.XlLineStyle.xlContinuous
+                                .ColorIndex = 0
+                                .TintAndShade = 0
+                                .Weight = Excel.XlBorderWeight.xlThin
+                            End With
                         End With
-                        With .Borders(Excel.XlBordersIndex.xlEdgeTop)
-                            .LineStyle = Excel.XlLineStyle.xlContinuous
-                            .ColorIndex = 0
-                            .TintAndShade = 0
-                            .Weight = Excel.XlBorderWeight.xlThin
-                        End With
-                        With .Borders(Excel.XlBordersIndex.xlEdgeBottom)
-                            .LineStyle = Excel.XlLineStyle.xlContinuous
-                            .ColorIndex = 0
-                            .TintAndShade = 0
-                            .Weight = Excel.XlBorderWeight.xlThin
-                        End With
-                        With .Borders(Excel.XlBordersIndex.xlEdgeRight)
-                            .LineStyle = Excel.XlLineStyle.xlContinuous
-                            .ColorIndex = 0
-                            .TintAndShade = 0
-                            .Weight = Excel.XlBorderWeight.xlThin
-                        End With
-                        With .Borders(Excel.XlBordersIndex.xlInsideVertical)
-                            .LineStyle = Excel.XlLineStyle.xlContinuous
-                            .ColorIndex = 0
-                            .TintAndShade = 0
-                            .Weight = Excel.XlBorderWeight.xlThin
-                        End With
-                        With .Borders(Excel.XlBordersIndex.xlInsideHorizontal)
-                            .LineStyle = Excel.XlLineStyle.xlContinuous
-                            .ColorIndex = 0
-                            .TintAndShade = 0
-                            .Weight = Excel.XlBorderWeight.xlThin
-                        End With
-                    End With
-                Catch ex As Exception
-                    MsgBox(ex.Message)
-                End Try
-
+                    Catch ex As Exception
+                        MsgBox(ex.Message)
+                    End Try
+                End If
                 If Chart Then
                     'create chart
                     Dim chartPage As Excel.Chart
@@ -217,7 +221,7 @@ Public Class Excel4d
             End If
 
             SilentSave(directry, fileName)
-
+            releaseObject(GetActiveSheet)
 
 
 
@@ -325,7 +329,7 @@ Public Class Excel4d
                 End With
             End With
 
-           
+
 
             For i = 0 To dx.Tables(TN1).Rows.Count - 1
 
@@ -618,5 +622,15 @@ Public Class Excel4d
         Else
             ws.Visible = Excel.XlSheetVisibility.xlSheetHidden
         End If
+    End Sub
+    Private Sub releaseObject(ByVal obj As Object)
+        Try
+            System.Runtime.InteropServices.Marshal.ReleaseComObject(obj)
+            obj = Nothing
+        Catch ex As Exception
+            obj = Nothing
+        Finally
+            GC.Collect()
+        End Try
     End Sub
 End Class

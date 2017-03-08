@@ -3,10 +3,18 @@ Imports System.Windows.Forms
 
 Module Module1
 
-    Public db As String = "data.mdb"
-    Dim cnn As New OleDb.OleDbConnection("Provider=Microsoft.Jet.Oledb.4.0; Data Source=" & Application.StartupPath & "\" & db)
+    Public db2003 As String = "data.mdb"
+    Public db2007 As String = "data.accdb"
+
+    Public ConStr2007 As String = "Provider=Microsoft.ACE.OLEDB.12.0;Data Source=" & Application.StartupPath & "\" & db2007 & ";"
+    Public ConStr2003 As String = "Provider=Microsoft.Jet.Oledb.4.0; Data Source=" & Application.StartupPath & "\" & db2003 & ";"
+    Public pcode As String = "Jet OLEDB:Database Password=peshawar123;"
+
+    Public ConStr1 As String = ConStr2007 & pcode
+    Public dt As DataTable
+    Dim cnn As New OleDb.OleDbConnection(ConStr1)
     Public ds As New DataSet
-    Public dt As New DataTable
+    Public dtempdt As New DataTable
     Dim cmd As New OleDb.OleDbCommand
     Public Path As String = Application.StartupPath
     Function Ql(ByVal query As String) As Boolean
@@ -116,12 +124,17 @@ Module Module1
 
     End Function
     Function GDs(cells As String, ByVal table As String, ByVal condition As String) As DataSet
-        If Not cnn.State = ConnectionState.Open Then cnn.Open()
-        If cells.Length = 0 Then cells = "*"
-        Dim s As String = "SELECT " & cells & " FROM " & table & " Where " & cCk(condition)
-        Dim da As New OleDb.OleDbDataAdapter(s, cnn)
-        If ds.Tables.Contains(table) Then ds.Tables.Remove(table)
-        da.Fill(ds, table)
+        Try
+            If Not cnn.State = ConnectionState.Open Then cnn.Open()
+            If cells.Length = 0 Then cells = "*"
+            Dim s As String = "SELECT " & cells & " FROM " & table & " Where " & cCk(condition)
+            Dim da As New OleDb.OleDbDataAdapter(s, cnn)
+            If ds.Tables.Contains(table) Then ds.Tables.Remove(table)
+            da.Fill(ds, table)
+        Catch ex As Exception
+
+        End Try
+
         Return ds
     End Function
     Function GDsFQ(ByVal Query As String, datatableName As String) As DataSet
@@ -543,7 +556,7 @@ Module Module1
         Try
             Dim T1 As New AutoCompleteStringCollection()
             Dim lst As New List(Of String)
-            ds = GDs("AutoCompleteTb", "Field='" & Field & "'")
+            ds = GDs("AutoCompleteTb", "") 'Field='" & Field & "'
             For i = 0 To ds.Tables("AutoCompleteTb").Rows.Count - 1
                 lst.Add(ds.Tables("AutoCompleteTb").Rows(i).Item("txt").ToString.Trim)
             Next
@@ -567,9 +580,15 @@ Module Module1
     End Sub
     Sub AutoCompletInserter(txt As String, Field As String)
         Try
-            If Not EXV(TbAutoCompName, "txt='" & txt & "' and Field='" & Field & "'") Then
-                insertData(TbAutoCompName, "txt,Field", "'" & txt & "','" & Field & "'")
-            End If
+            'DEL(TbAutoCompName, "txt=''")
+            txt = txt.Replace("'", " ").Trim
+            If IsNumeric(txt) Then Exit Sub
+            If Not Val(txt) = 0 Then Exit Sub
+            If txt.Length = 0 Then Exit Sub
+
+            'and Field='" & Field & "'
+            If Not EXV(TbAutoCompName, "txt='" & txt & "'") Then insertData(TbAutoCompName, "txt,Field", "'" & txt & "','" & Field & "'")
+
         Catch ex As Exception
 
         End Try
@@ -1086,4 +1105,11 @@ h1:
         End Try
 
     End Function
+    Sub createTable(table As String, feild As String(), syntax As String())
+        Try
+            If Not IfTableExist(table) Then Ql("CREATE TABLE " & table & " ( " & A2S(AnV(feild, syntax)) & " )")
+        Catch ex As Exception
+            Ql("CREATE TABLE " & table & " ( " & A2S(AnV(feild, syntax)) & " )")
+        End Try
+    End Sub
 End Module

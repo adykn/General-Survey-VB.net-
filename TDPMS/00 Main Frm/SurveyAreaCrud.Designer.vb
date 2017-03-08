@@ -67,6 +67,8 @@ Partial Class SurveyAreaCrud
         Me.Panel4 = New System.Windows.Forms.Panel()
         Me.Panel5 = New System.Windows.Forms.Panel()
         Me.pp1 = New System.Windows.Forms.Panel()
+        Me.Label1 = New System.Windows.Forms.Label()
+        Me.CheckBox2 = New System.Windows.Forms.CheckBox()
         Me.ttPass = New System.Windows.Forms.TextBox()
         Me.llMsg = New System.Windows.Forms.Label()
         Me.Button1 = New System.Windows.Forms.Button()
@@ -88,8 +90,6 @@ Partial Class SurveyAreaCrud
         Me.Label12 = New System.Windows.Forms.Label()
         Me.bbSave = New System.Windows.Forms.Button()
         Me.Timer1 = New System.Windows.Forms.Timer(Me.components)
-        Me.CheckBox2 = New System.Windows.Forms.CheckBox()
-        Me.Label1 = New System.Windows.Forms.Label()
         Me.pp2.SuspendLayout()
         Me.ppPass.SuspendLayout()
         Me.Panel7.SuspendLayout()
@@ -550,6 +550,29 @@ Partial Class SurveyAreaCrud
         Me.pp1.Size = New System.Drawing.Size(854, 380)
         Me.pp1.TabIndex = 6
         '
+        'Label1
+        '
+        Me.Label1.Anchor = System.Windows.Forms.AnchorStyles.Top
+        Me.Label1.AutoSize = True
+        Me.Label1.Location = New System.Drawing.Point(574, 169)
+        Me.Label1.Name = "Label1"
+        Me.Label1.Size = New System.Drawing.Size(96, 13)
+        Me.Label1.TabIndex = 93
+        Me.Label1.Text = ".:. Defualt: NoPass"
+        '
+        'CheckBox2
+        '
+        Me.CheckBox2.Anchor = System.Windows.Forms.AnchorStyles.Top
+        Me.CheckBox2.AutoSize = True
+        Me.CheckBox2.Location = New System.Drawing.Point(252, 168)
+        Me.CheckBox2.Name = "CheckBox2"
+        Me.CheckBox2.RightToLeft = System.Windows.Forms.RightToLeft.Yes
+        Me.CheckBox2.Size = New System.Drawing.Size(108, 17)
+        Me.CheckBox2.TabIndex = 92
+        Me.CheckBox2.Text = "Enable Password"
+        Me.CheckBox2.TextAlign = System.Drawing.ContentAlignment.MiddleRight
+        Me.CheckBox2.UseVisualStyleBackColor = True
+        '
         'ttPass
         '
         Me.ttPass.Anchor = System.Windows.Forms.AnchorStyles.Top
@@ -768,29 +791,6 @@ Partial Class SurveyAreaCrud
         'Timer1
         '
         Me.Timer1.Interval = 1000
-        '
-        'CheckBox2
-        '
-        Me.CheckBox2.Anchor = System.Windows.Forms.AnchorStyles.Top
-        Me.CheckBox2.AutoSize = True
-        Me.CheckBox2.Location = New System.Drawing.Point(252, 168)
-        Me.CheckBox2.Name = "CheckBox2"
-        Me.CheckBox2.RightToLeft = System.Windows.Forms.RightToLeft.Yes
-        Me.CheckBox2.Size = New System.Drawing.Size(108, 17)
-        Me.CheckBox2.TabIndex = 92
-        Me.CheckBox2.Text = "Enable Password"
-        Me.CheckBox2.TextAlign = System.Drawing.ContentAlignment.MiddleRight
-        Me.CheckBox2.UseVisualStyleBackColor = True
-        '
-        'Label1
-        '
-        Me.Label1.Anchor = System.Windows.Forms.AnchorStyles.Top
-        Me.Label1.AutoSize = True
-        Me.Label1.Location = New System.Drawing.Point(574, 169)
-        Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(96, 13)
-        Me.Label1.TabIndex = 93
-        Me.Label1.Text = ".:. Defualt: NoPass"
         '
         'SurveyAreaCrud
         '

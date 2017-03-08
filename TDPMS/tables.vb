@@ -1,9 +1,6 @@
 ﻿Module tables
 
-    Public TN As String = "MemoNote"
-    Public TF As String() = {"Id", "MemoNote"}
-    Public TV As String() = {"", ""}
-    Public TS As String() = {"N", "M"}
+
 
     Public TNq As String = "Question"
     Public TFq As String() = {"Id", "FormRef", "SN", "Question", "AnsTypeRef"}
@@ -78,14 +75,8 @@
     Public TbAutoCompSyntax As String() = {"T", "T"}
 
 
-    'Sub New()
-    '    createTable(TN2, TF2, TS2)
-    'End Sub
-    Sub createTable(table As String, feild As String(), syntax As String())
-        Try
-            If Not IfTableExist(table) Then Ql("CREATE TABLE " & table & " ( " & A2S(AnV(feild, syntax)) & " )")
-        Catch ex As Exception
-            Ql("CREATE TABLE " & table & " ( " & A2S(AnV(feild, syntax)) & " )")
-        End Try
+    Sub New()
+        createTable(TbAutoCompName, TbAutoCompFeilds, TbAutoCompSyntax)
     End Sub
+
 End Module

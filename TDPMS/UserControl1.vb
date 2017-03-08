@@ -42,6 +42,6 @@ Public Class UserControl1
 
      
     Private Sub Button5_Click(sender As Object, e As EventArgs) Handles Button5.Click
-        FormXmdi.OCFrm(FormX2)
+        ' FormXmdi.OCFrm(FormX2)
     End Sub
 End Class

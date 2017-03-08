@@ -3,37 +3,74 @@
 Public Class QuestionHeaderInformation
 
     Public TN As String = "QuestionGeneralInformation"
-    Public TF As String() = {"Id", "c1", "c2", "c3", "c4", "c5", "c6", "c7", "c8", "c9", "c10", "c11"}
-    Public TV As String() = {"", "", "", "", "", "", "", "", "", "", "", ""}
-    Public TS As String() = {"N", "T", "T", "T", "T", "T", "T", "T", "T", "T", "T", "T"}
+    Public TF As String() = {"Id", "FormNo", "Mobilizer_Name", "Dt", "Province", "District", "Tehsil", "UC", "Village", "Sub_Village"}
+    Public TV(TF.Length - 1) As String
+    Public TS As String() = {"N", "T", "T", "T", "T", "T", "T", "T", "T", "T"}
     Public temp(8) As String
     Dim point1 As Point, point2 As Point
     Private Sub QuestionHeads_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-
+        dg.Columns.Add("Tracker", "Tracker")
         point1 = dg.Location
         point2 = dg.Size
         temp = {"0", "0", "0", "0", "0", "0", "0", "0"}
         Me.MdiParent = FormXmdi
         createTable(TN, TF, TS)
         refreshEverything()
+        If My.Settings.condition.Length = 0 Then
+            My.Settings.condition = "1=1"
+        Else
+            ttCondition.Text = My.Settings.condition
+        End If
 
     End Sub
     Sub dgfill()
-        dg.DataSource = GDs(TN, "c1 like '" & FormXmdi.llSurveyRef.Text & "%'").Tables(TN)
-        dg.Columns(0).FillWeight = 20
-        dg.Columns(1).FillWeight = 100
-        dg.Columns(2).FillWeight = 100
+        Try
+
+            Try
+                dg.DataSource = GDs(TN, "FormNo like '" & FormXmdi.llSurveyRef.Text & "%' and " & ttCondition.Text & " order by Id Desc").Tables(TN)
+                dg.Columns(1).Visible = False
+                'dg.Columns(1).FillWeight = 20
+                'dg.Columns(1).FillWeight = 100
+                dg.Columns(2).FillWeight = 150
+                lltotal.Text = dg.RowCount
+            Catch ex As Exception
+
+            End Try
+
+        Catch ex As Exception
+
+        End Try
+
 
     End Sub
     Sub refreshEverything()
         CheckAllAutoCompletFields(Panel1)
         dgfill()
+        If CheckBox1.Checked = True Then
+            dg.ClearSelection()
+            dg.Rows(dg.RowCount - 1).Selected = True
+            'OpenSurveyToolStripMenuItem.PerformClick()
+        End If
+
+
         bbSave.Text = "Save"
-        Clr(Panel1)
-        TextBox1.Text = SpDateKey2("C1", TN, FormXmdi.llSurveyRef.Text)
-        TextBox1.Enabled = False
+
+        'TextBox1.Clear()
+        TextBox2.Clear()
+        TextBox3.Clear()
+        TextBox4.Clear()
+        TextBox5.Clear()
+        TextBox6.Clear()
+        TextBox7.Clear()
+        TextBox8.Clear()
+        TextBox9.Clear()
+
         trapTextboxs(Panel1)
+        TextBox1.Text = SpDateKey2("FormNo", TN, FormXmdi.llSurveyRef.Text)
+        TextBox1.Enabled = False
+
         TextBox2.Focus()
+        '{"Id", "FormNo", "Mobilizer_Name", "Dt", "Province", "District", "Tehsil", "UC", "Village", "Sub_Village"}
         getRememberedVal(TextBox2, cc1)
         getRememberedVal(TextBox3, cc2)
         getRememberedVal(TextBox4, cc3)
@@ -74,17 +111,17 @@ Public Class QuestionHeaderInformation
     End Sub
     Sub fillFrm()
         Dim dt As DataTable = GDs(TN, " Id= " & ttid.Text & " order by Id").Tables(TN)
-        TextBox1.Text = dt.Rows(0).Item("c1")
-        TextBox2.Text = dt.Rows(0).Item("c2")
-        TextBox3.Text = dt.Rows(0).Item("c3")
-        TextBox4.Text = dt.Rows(0).Item("c4")
-        TextBox5.Text = dt.Rows(0).Item("c5")
-        TextBox6.Text = dt.Rows(0).Item("c6")
-        TextBox7.Text = dt.Rows(0).Item("c7")
-        TextBox8.Text = dt.Rows(0).Item("c8")
-        TextBox9.Text = dt.Rows(0).Item("c9")
-        ComboBox2.Text = dt.Rows(0).Item("c10")
-        ComboBox3.Text = dt.Rows(0).Item("c11")
+        '{"Id", "FormNo", "Mobilizer_Name", "Dt", "Province", "District", "Tehsil", "UC", "Village", "Sub_Village"}
+        TextBox1.Text = dt.Rows(0).Item("FormNo")
+        TextBox2.Text = dt.Rows(0).Item("Mobilizer_Name")
+        TextBox3.Text = dt.Rows(0).Item("Dt")
+        TextBox4.Text = dt.Rows(0).Item("Province")
+        TextBox5.Text = dt.Rows(0).Item("District")
+        TextBox6.Text = dt.Rows(0).Item("Tehsil")
+        TextBox7.Text = dt.Rows(0).Item("UC")
+        TextBox8.Text = dt.Rows(0).Item("Village")
+        TextBox9.Text = dt.Rows(0).Item("Sub_Village")
+
 
         ENB(Panel1, False)
         bbSave.Text = "Edit"
@@ -97,7 +134,7 @@ Public Class QuestionHeaderInformation
         Dim s As String = ""
         Dim c As String = ""
 
-        CheckAllAutoCompletFields(Panel1)
+        ' CheckAllAutoCompletFields(Panel1)
 
         v(1) = TextBox1.Text.Trim
         v(2) = TextBox2.Text.Trim
@@ -108,10 +145,13 @@ Public Class QuestionHeaderInformation
         v(7) = TextBox7.Text.Trim
         v(8) = TextBox8.Text.Trim
         v(9) = TextBox9.Text.Trim
-        v(10) = ComboBox2.Text.Trim
-        v(11) = ComboBox3.Text.Trim
 
         If bbSave.Text = "Save" Then
+            GoTo h2
+h1:
+            v(1) = SpDateKey2("FormNo", TN, FormXmdi.llSurveyRef.Text)
+h2:
+            If EXV(t, "FormNo='" & v(1) & "'") Then GoTo h1
             v(0) = Max(t, "", "Id") + 1
             INS(t, f, CAQ(v, x))
         ElseIf bbSave.Text = "Update" Then
@@ -132,14 +172,14 @@ Public Class QuestionHeaderInformation
     Private Sub DeleteToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles DeleteToolStripMenuItem.Click
         If MsgBox("Are you Sure", vbYesNo) = MsgBoxResult.Yes Then
             For Each r In dg.SelectedRows
-                DEL(TN, "Id=" & r.Cells(0).Value)
+                DEL(TN, "Id=" & r.Cells("Id").Value)
             Next
             refreshEverything()
         End If
     End Sub
 
     Private Sub EditToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles EditToolStripMenuItem.Click
-        ttid.Text = dg.CurrentRow.Cells(0).Value
+        ttid.Text = dg.CurrentRow.Cells("Id").Value
         fillFrm()
     End Sub
 
@@ -200,18 +240,43 @@ Public Class QuestionHeaderInformation
     End Sub
 
     Private Sub OpenSurveyToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles OpenSurveyToolStripMenuItem.Click
+        If dg.RowCount = 0 Then Exit Sub
+        If dg.SelectedRows.Count <> 1 Then MsgBox("Please select a single Record") : Exit Sub
+        ' '{"Id", "FormNo", "Mobilizer_Name", "Dt", "Province", "District", "Tehsil", "UC", "Village", "Sub_Village"}
         With dg.CurrentRow()
-            FormXmdi.llid.Text = .Cells(0).Value
-            FormXmdi.lluc.Text = .Cells(7).Value
-            FormXmdi.llref.Text = .Cells(1).Value
-            FormXmdi.llDist.Text = .Cells(5).Value
-            FormXmdi.llvillage.Text = .Cells(8).Value
+            FormXmdi.llid.Text = .Cells("Id").Value
+            FormXmdi.lluc.Text = .Cells(8).Value
+            FormXmdi.llref.Text = .Cells("FormNo").Value
+            FormXmdi.llDist.Text = .Cells(6).Value
+            FormXmdi.llvillage.Text = .Cells(9).Value
             Button3.Enabled = True
         End With
         QuestionEntry.Show()
         Button5.Enabled = False
-    End Sub
+        Try
+            FormXmdi.llStopWatchStart.Text = FormXmdi.llTime.Text
+            FormXmdi.llStopWatchEnd.Text = 0
+            FormXmdi.llStopWatchDiffSec.Text = 0
+        Catch ex As Exception
 
+        End Try
+    End Sub
+    Private Sub Button5_Click(sender As Object, e As EventArgs) Handles Button5.Click
+
+        If dg.SelectedRows.Count <> 1 Then MsgBox("Please select a single Record") : Exit Sub
+        If dg.RowCount = 0 Then Exit Sub
+        With dg.CurrentRow()
+            FormXmdi.llid.Text = .Cells("Id").Value
+            FormXmdi.lluc.Text = .Cells(8).Value
+            FormXmdi.llref.Text = .Cells("FormNo").Value
+            FormXmdi.llDist.Text = .Cells(6).Value
+            FormXmdi.llvillage.Text = .Cells(9).Value
+            Button3.Enabled = True
+        End With
+        QuestionEntry.Show()
+        Button5.Enabled = False
+
+    End Sub
     Private Sub Button3_Click(sender As Object, e As EventArgs) Handles Button3.Click
         Button8.Text = "Close"
         refreshEverything()
@@ -227,21 +292,8 @@ Public Class QuestionHeaderInformation
         refreshEverything()
     End Sub
 
-    Private Sub Button5_Click(sender As Object, e As EventArgs) Handles Button5.Click
-       
-        If dg.SelectedRows.Count <> 1 Then MsgBox("Please select a single Recorde") : Exit Sub
-        With dg.CurrentRow()
-            FormXmdi.llid.Text = .Cells(0).Value
-            FormXmdi.lluc.Text = .Cells(7).Value
-            FormXmdi.llref.Text = .Cells(1).Value
-            FormXmdi.llDist.Text = .Cells(5).Value
-            FormXmdi.llvillage.Text = .Cells(8).Value
-            Button3.Enabled = True
-        End With
-        QuestionEntry.Show()
-        Button5.Enabled = False
-        
-    End Sub
+
+
 
     Private Sub NewEntryToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles NewEntryToolStripMenuItem.Click
 
@@ -265,11 +317,66 @@ Public Class QuestionHeaderInformation
         ShowGivenAns.Show()
     End Sub
 
+    Private Sub Button11_Click(sender As Object, e As EventArgs) Handles Button11.Click
+        Try
+            If dg.Rows.Count = 0 Then Exit Sub
+            Dim dtx As DataTable
+            Dim str As String = ""
+            dtx = GDs("Id,c3,c1,c2", "QuestionHead", " c4 ='" & FormXmdi.llSurveyRef.Text & "' order by c3").Tables("QuestionHead")
+            For i = 0 To dg.Rows.Count - 1
+                With dg.Rows(i)
+                    str = ""
+                    For j = 0 To dtx.Rows.Count - 1
+                        If Not EXV("GivenAns", "Hid='" & dtx.Rows(j).Item("Id") & "' and ref='" & .Cells("FormNo").Value & "'") Then
+                            str = str & dtx.Rows(j).Item("Id") & "|"
+                        End If
+                    Next
+                    .Cells("Tracker").Value = str
+                End With
+            Next
+        Catch ex As Exception
+
+        End Try
+    End Sub
+
+
     Private Sub Button10_Click(sender As Object, e As EventArgs) Handles Button10.Click
         Button8.Text = "Close"
         refreshEverything()
         QuestionsAnsXlsExport.Show()
     End Sub
 
-     
+
+    Private Sub Button12_Click(sender As Object, e As EventArgs) Handles Button12.Click
+        Try
+            My.Settings.condition = ttCondition.Text
+            My.Settings.Save()
+            dgfill()
+        Catch ex As Exception
+
+        End Try
+    End Sub
+
+    Protected Overrides Function ProcessCmdKey(ByRef msg As System.Windows.Forms.Message, ByVal keyData As System.Windows.Forms.Keys) As Boolean
+        'MsgBox(keyData)
+        Select Case keyData
+            Case Keys.F1
+            Case Keys.Enter
+                'SendKeys.Send("{Tab}")
+                Dim x = Me.ActiveControl.GetType()
+                If x.Name.Equals("TextBox") Then Me.SelectNextControl(Me.ActiveControl, True, True, True, True)
+            Case Keys.Pause
+                bbSave.PerformClick()
+            Case Keys.Scroll
+                OpenSurveyToolStripMenuItem.PerformClick()
+            Case Keys.F12
+                bbSave.PerformClick()
+            Case Else
+                Return MyBase.ProcessCmdKey(msg, keyData)
+
+        End Select
+
+        Return True
+    End Function
+
 End Class

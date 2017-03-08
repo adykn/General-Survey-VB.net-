@@ -8,17 +8,17 @@ Imports System.Runtime.InteropServices
 
 ' Review the values of the assembly attributes
 
-<Assembly: AssemblyTitle("TDPMS")> 
-<Assembly: AssemblyDescription("")> 
-<Assembly: AssemblyCompany("4d.kh4n@gmail.com")> 
-<Assembly: AssemblyProduct("TDPMS")> 
-<Assembly: AssemblyCopyright("Copyright © 4d.kh4n@gmail.com 2015")> 
-<Assembly: AssemblyTrademark("")> 
+<Assembly: AssemblyTitle("TDPMS")>
+<Assembly: AssemblyDescription("")>
+<Assembly: AssemblyCompany("4d.kh4n@gmail.com")>
+<Assembly: AssemblyProduct("TDPMS")>
+<Assembly: AssemblyCopyright("Copyright © 4d.kh4n@gmail.com 2015")>
+<Assembly: AssemblyTrademark("")>
 
 <Assembly: ComVisible(False)>
 
 'The following GUID is for the ID of the typelib if this project is exposed to COM
-<Assembly: Guid("5847426f-a89d-43cc-86e6-8acece2b59ce")> 
+<Assembly: Guid("5847426f-a89d-43cc-86e6-8acece2b59ce")>
 
 ' Version information for an assembly consists of the following four values:
 '
@@ -29,7 +29,6 @@ Imports System.Runtime.InteropServices
 '
 ' You can specify all the values or you can default the Build and Revision Numbers 
 ' by using the '*' as shown below:
-' <Assembly: AssemblyVersion("1.0.*")> 
 
-<Assembly: AssemblyVersion("1.0.0.0")> 
-<Assembly: AssemblyFileVersion("1.0.0.0")> 
+<Assembly: AssemblyVersion("1.0.0.358")>
+'<Assembly: AssemblyFileVersion("1.0.0.0")> 

@@ -118,55 +118,73 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="feature-update" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\feature-update.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="Metal_background_A" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Metal_background_A.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="glass" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\glass.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="Contact" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Contact.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="excel_xls_icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\excel-xls-icon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="bg1" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\bg1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="1428676701_editor_setting_gear_-128" type="System.Resources.ResXFileRef, System.Windows.Forms">
+  <data name="editor_setting_gear_128" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\1428676701_editor_setting_gear_-128.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="footer.bg" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\footer.bg.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="white_cubes_pattern" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\white_cubes_pattern.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="1428676682_pen_stroke_sketch_doodle_lineart_116-128" type="System.Resources.ResXFileRef, System.Windows.Forms">
+  <data name="pen_stroke_sketch_doodle_lineart_1428676644" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\1428676644_pen_stroke_sketch_doodle_lineart_65-128.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="pen_stroke_sketch_doodle_lineart_1428676682" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\1428676682_pen_stroke_sketch_doodle_lineart_116-128.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="update-web-background-software-abstract-general-44873" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\update-web-background-software-abstract-general-44873.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="setting_1428676619" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\1428676619_setting.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="excel-xls-icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\excel-xls-icon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="bg" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\bg.bmp;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="Arrioch-Senary-Office-excel-xls" type="System.Resources.ResXFileRef, System.Windows.Forms">
+  <data name="excel_icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\excel_icon.jpeg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Arrioch_Senary_Office_excel_xls" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Arrioch-Senary-Office-excel-xls.ico;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="1428676644_pen_stroke_sketch_doodle_lineart_65-128" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\1428676644_pen_stroke_sketch_doodle_lineart_65-128.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="feature_update" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\feature-update.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="plus_4_32" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\plus-4-32.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="footer_bg" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\footer.bg.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="favicon" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\favicon.ico;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="Idea_logo_small" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Idea_logo_small.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
   <data name="menu01" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\menu01.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="1428676619_setting" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\1428676619_setting.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="Idea_logo_small" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Idea_logo_small.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="plus-4-32" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\plus-4-32.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="fresh" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\fresh.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="update_web_background_software" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\update-web-background-software-abstract-general-44873.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="download" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\download.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="excel_icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\excel_icon.jpeg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="UpgradeIconBig" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\UpgradeIconBig.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

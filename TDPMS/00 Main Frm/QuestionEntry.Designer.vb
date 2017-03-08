@@ -27,6 +27,9 @@ Partial Class QuestionEntry
         Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(QuestionEntry))
         Me.Panel1 = New System.Windows.Forms.Panel()
+        Me.llStatus = New System.Windows.Forms.Label()
+        Me.Button6 = New System.Windows.Forms.Button()
+        Me.Button5 = New System.Windows.Forms.Button()
         Me.Button4 = New System.Windows.Forms.Button()
         Me.Panel2 = New System.Windows.Forms.Panel()
         Me.Button3 = New System.Windows.Forms.Button()
@@ -49,6 +52,9 @@ Partial Class QuestionEntry
         Me.ClearSavedRecordsToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.dg = New System.Windows.Forms.DataGridView()
         Me.ErrorProvider1 = New System.Windows.Forms.ErrorProvider(Me.components)
+        Me.BackgroundWorker1 = New System.ComponentModel.BackgroundWorker()
+        Me.BackgroundWorker2 = New System.ComponentModel.BackgroundWorker()
+        Me.llRindex = New System.Windows.Forms.Label()
         Me.Panel1.SuspendLayout()
         Me.Panel2.SuspendLayout()
         CType(Me.dg3, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -67,6 +73,9 @@ Partial Class QuestionEntry
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.Panel1.BackColor = System.Drawing.Color.White
         Me.Panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.Panel1.Controls.Add(Me.llStatus)
+        Me.Panel1.Controls.Add(Me.Button6)
+        Me.Panel1.Controls.Add(Me.Button5)
         Me.Panel1.Controls.Add(Me.Button4)
         Me.Panel1.Controls.Add(Me.Panel2)
         Me.Panel1.Controls.Add(Me.ll2)
@@ -77,10 +86,45 @@ Partial Class QuestionEntry
         Me.Panel1.Controls.Add(Me.dg2)
         Me.Panel1.Controls.Add(Me.dg1)
         Me.Panel1.Controls.Add(Me.dg)
+        Me.Panel1.Controls.Add(Me.llRindex)
         Me.Panel1.Location = New System.Drawing.Point(12, 12)
         Me.Panel1.Name = "Panel1"
         Me.Panel1.Size = New System.Drawing.Size(885, 426)
         Me.Panel1.TabIndex = 3
+        '
+        'llStatus
+        '
+        Me.llStatus.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.llStatus.AutoSize = True
+        Me.llStatus.Font = New System.Drawing.Font("Matura MT Script Capitals", 16.0!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Italic), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.llStatus.ForeColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(192, Byte), Integer), CType(CType(192, Byte), Integer))
+        Me.llStatus.Location = New System.Drawing.Point(691, 40)
+        Me.llStatus.Name = "llStatus"
+        Me.llStatus.Size = New System.Drawing.Size(187, 29)
+        Me.llStatus.TabIndex = 56
+        Me.llStatus.Text = "Not Answered"
+        '
+        'Button6
+        '
+        Me.Button6.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.Button6.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.Button6.Location = New System.Drawing.Point(461, 361)
+        Me.Button6.Name = "Button6"
+        Me.Button6.Size = New System.Drawing.Size(124, 60)
+        Me.Button6.TabIndex = 55
+        Me.Button6.Text = "Village Vis Roster"
+        Me.Button6.UseVisualStyleBackColor = True
+        '
+        'Button5
+        '
+        Me.Button5.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.Button5.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.Button5.Location = New System.Drawing.Point(591, 359)
+        Me.Button5.Name = "Button5"
+        Me.Button5.Size = New System.Drawing.Size(124, 60)
+        Me.Button5.TabIndex = 54
+        Me.Button5.Text = "Roster"
+        Me.Button5.UseVisualStyleBackColor = True
         '
         'Button4
         '
@@ -329,6 +373,20 @@ Partial Class QuestionEntry
         '
         Me.ErrorProvider1.ContainerControl = Me
         '
+        'BackgroundWorker1
+        '
+        '
+        'llRindex
+        '
+        Me.llRindex.AutoSize = True
+        Me.llRindex.Font = New System.Drawing.Font("Arial Black", 16.0!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Italic), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.llRindex.ForeColor = System.Drawing.Color.FromArgb(CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer))
+        Me.llRindex.Location = New System.Drawing.Point(260, 35)
+        Me.llRindex.Name = "llRindex"
+        Me.llRindex.Size = New System.Drawing.Size(29, 31)
+        Me.llRindex.TabIndex = 57
+        Me.llRindex.Text = "0"
+        '
         'QuestionEntry
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -377,4 +435,10 @@ Partial Class QuestionEntry
     Friend WithEvents Column2 As System.Windows.Forms.DataGridViewTextBoxColumn
     Friend WithEvents ttRowIndex As System.Windows.Forms.TextBox
     Friend WithEvents Button4 As System.Windows.Forms.Button
+    Friend WithEvents Button5 As Windows.Forms.Button
+    Friend WithEvents Button6 As Windows.Forms.Button
+    Friend WithEvents BackgroundWorker1 As ComponentModel.BackgroundWorker
+    Friend WithEvents llStatus As Windows.Forms.Label
+    Friend WithEvents BackgroundWorker2 As ComponentModel.BackgroundWorker
+    Friend WithEvents llRindex As Windows.Forms.Label
 End Class

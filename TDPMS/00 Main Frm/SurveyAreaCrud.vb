@@ -1,4 +1,6 @@
-﻿Public Class SurveyAreaCrud
+﻿Imports System.Windows.Forms
+
+Public Class SurveyAreaCrud
 
     Public T As String = "Surveys"
     Public F As String() = {"Id", "Ref", "Title", "Loc", "Typ", "l1", "l2", "Detail", "Pass"}
@@ -10,9 +12,10 @@
     Private Sub SurveyAreaCrud_Load(sender As Object, e As EventArgs) Handles MyBase.Load
 
         Me.MdiParent = FormXmdi
+        'Me.MdiParent = SwitchBoard
         createTable(T, F, X)
         refreshEverything()
-       
+
 
     End Sub
     Sub refreshEverything()
@@ -38,7 +41,7 @@
     End Sub
 
     Private Sub bbSave_Click(sender As Object, e As EventArgs) Handles bbSave.Click
-        
+
         Dim s As String = ""
         Dim c As String = ""
 
@@ -54,12 +57,12 @@
         V(8) = Crypto.Enc(ttPass.Text.Trim, ttref.Text.Trim) ' <-encode ttPass=enc(noPass,ref) & save result here
 
         If bbSave.Text = "Save" Then
-            v(0) = Max(t, "", "Id") + 1
-            INS(t, f, CAQ(v, x))
+            V(0) = Max(T, "", "Id") + 1
+            INS(T, F, CAQ(V, X))
         ElseIf bbSave.Text = "Update" Then
-            v(0) = ttid.Text
+            V(0) = ttid.Text
             c = "Id = " & ttid.Text
-            UPD(t, C2A(f, CAQ(v, x)), c)
+            UPD(T, C2A(F, CAQ(V, X)), c)
             bbSave.Text = "Save"
         ElseIf bbSave.Text = "Edit" Then
             ENB(pp1, True)
@@ -69,7 +72,7 @@
 
         refreshEverything()
     End Sub
-    #Region "Right click menu options"
+#Region "Right click menu options"
     Sub ShowMsg(txt As String)
         llMsg.Visible = False
         llMsg.Text = txt.Trim
@@ -113,7 +116,7 @@
 
     Private Sub DeleteToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles DeleteToolStripMenuItem.Click
         ' show msg if yes pressed then start loop
-         setPPPass("Del", "Pass")
+        setPPPass("Del", "Pass")
     End Sub
 
     Private Sub StartSurveyToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles StartSurveyToolStripMenuItem.Click
@@ -130,12 +133,13 @@
     End Sub
 #End Region
 
-   
-  
+
+
     Sub PassPanelProcess(type_PassChange_Pass_SetPass As String)
 
         ppPass.Visible = True
         ttPassType.Text = type_PassChange_Pass_SetPass
+
 
         If type_PassChange_Pass_SetPass = "PassChange" Then
             ll1.Visible = True : tt1.Visible = True
@@ -172,6 +176,7 @@
         End If
 
         PassPanelProcess(panl)
+        If ttppass.Text = "NoPass" Then Button3.PerformClick() : Exit Sub
     End Sub
     Private Sub Button3_Click(sender As Object, e As EventArgs) Handles Button3.Click
 
@@ -270,5 +275,11 @@ h1:
     Private Sub CheckBox2_CheckedChanged(sender As Object, e As EventArgs) Handles CheckBox2.CheckedChanged
         ttPass.Enabled = CheckBox2.Enabled
         ttPass.Visible = CheckBox2.Enabled
+    End Sub
+
+
+
+    Private Sub dg_CellDoubleClick(sender As Object, e As DataGridViewCellEventArgs) Handles dg.CellDoubleClick
+        setPPPass("Questionary", "Pass")
     End Sub
 End Class

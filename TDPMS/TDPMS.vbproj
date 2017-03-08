@@ -95,10 +95,46 @@
     <Import Include="System.Threading.Tasks" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="00 Main Frm\COAttendance.Designer.vb">
+      <DependentUpon>COAttendance.vb</DependentUpon>
+    </Compile>
+    <Compile Include="00 Main Frm\COAttendance.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="00 Main Frm\SurveyAreaCrud.Designer.vb">
       <DependentUpon>SurveyAreaCrud.vb</DependentUpon>
     </Compile>
     <Compile Include="00 Main Frm\SurveyAreaCrud.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="00 Main Frm\SwitchBoard.Designer.vb">
+      <DependentUpon>SwitchBoard.vb</DependentUpon>
+    </Compile>
+    <Compile Include="00 Main Frm\SwitchBoard.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="00 Main Frm\UCProfile.Designer.vb">
+      <DependentUpon>UCProfile.vb</DependentUpon>
+    </Compile>
+    <Compile Include="00 Main Frm\UCProfile.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="00 Main Frm\Upgrade.designer.vb">
+      <DependentUpon>Upgrade.vb</DependentUpon>
+    </Compile>
+    <Compile Include="00 Main Frm\Upgrade.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="00 Main Frm\VillageVisRoster.Designer.vb">
+      <DependentUpon>VillageVisRoster.vb</DependentUpon>
+    </Compile>
+    <Compile Include="00 Main Frm\VillageVisRoster.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="00 Main Frm\VOCrud.Designer.vb">
+      <DependentUpon>VOCrud.vb</DependentUpon>
+    </Compile>
+    <Compile Include="00 Main Frm\VOCrud.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="01 Frm\Form04.designer.vb">
@@ -143,261 +179,69 @@
     <Compile Include="01 Frm\Form10.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="01 Frm\HowTo.Designer.vb">
+    <Compile Include="00 Main Frm\HowTo.Designer.vb">
       <DependentUpon>HowTo.vb</DependentUpon>
     </Compile>
-    <Compile Include="01 Frm\HowTo.vb">
+    <Compile Include="00 Main Frm\HowTo.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="01 Frm\QuestionAnsEntry.Designer.vb">
+    <Compile Include="00 Main Frm\QuestionAnsEntry.Designer.vb">
       <DependentUpon>QuestionAnsEntry.vb</DependentUpon>
     </Compile>
-    <Compile Include="01 Frm\QuestionAnsEntry.vb">
+    <Compile Include="00 Main Frm\QuestionAnsEntry.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="01 Frm\QuestionEntry.Designer.vb">
+    <Compile Include="00 Main Frm\QuestionEntry.Designer.vb">
       <DependentUpon>QuestionEntry.vb</DependentUpon>
     </Compile>
-    <Compile Include="01 Frm\QuestionEntry.vb">
+    <Compile Include="00 Main Frm\QuestionEntry.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="01 Frm\QuestionHeaderInformation.Designer.vb">
+    <Compile Include="00 Main Frm\QuestionHeaderInformation.Designer.vb">
       <DependentUpon>QuestionHeaderInformation.vb</DependentUpon>
     </Compile>
-    <Compile Include="01 Frm\QuestionHeaderInformation.vb">
+    <Compile Include="00 Main Frm\QuestionHeaderInformation.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="01 Frm\QuestionHeads.Designer.vb">
+    <Compile Include="00 Main Frm\QuestionHeads.Designer.vb">
       <DependentUpon>QuestionHeads.vb</DependentUpon>
     </Compile>
-    <Compile Include="01 Frm\QuestionHeads.vb">
+    <Compile Include="00 Main Frm\QuestionHeads.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="01 Frm\QuestionsAnsXlsExport.Designer.vb">
+    <Compile Include="00 Main Frm\QuestionsAnsXlsExport.Designer.vb">
       <DependentUpon>QuestionsAnsXlsExport.vb</DependentUpon>
     </Compile>
-    <Compile Include="01 Frm\QuestionsAnsXlsExport.vb">
+    <Compile Include="00 Main Frm\QuestionsAnsXlsExport.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="01 Frm\ShowGivenAns.Designer.vb">
+    <Compile Include="00 Main Frm\ShowGivenAns.Designer.vb">
       <DependentUpon>ShowGivenAns.vb</DependentUpon>
     </Compile>
-    <Compile Include="01 Frm\ShowGivenAns.vb">
+    <Compile Include="00 Main Frm\ShowGivenAns.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="80 Rpt\Form32.Designer.vb">
-      <DependentUpon>Form32.vb</DependentUpon>
-    </Compile>
-    <Compile Include="80 Rpt\Form32.vb">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="80 Rpt\Rpt04.vb">
-      <DependentUpon>Rpt04.rpt</DependentUpon>
-      <AutoGen>True</AutoGen>
-      <SubType>Component</SubType>
-      <DesignTime>True</DesignTime>
-    </Compile>
-    <Compile Include="80 Rpt\Rpt03.vb">
-      <DependentUpon>Rpt03.rpt</DependentUpon>
-      <AutoGen>True</AutoGen>
-      <SubType>Component</SubType>
-      <DesignTime>True</DesignTime>
-    </Compile>
-    <Compile Include="80 Rpt\Rpt02.vb">
-      <DependentUpon>Rpt02.rpt</DependentUpon>
-      <AutoGen>True</AutoGen>
-      <SubType>Component</SubType>
-      <DesignTime>True</DesignTime>
-    </Compile>
-    <Compile Include="80 Rpt\Rpt01.2.vb">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Rpt01.2.rpt</DependentUpon>
-      <SubType>Component</SubType>
-    </Compile>
-    <Compile Include="80 Rpt\Rpt01.vb">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Rpt01.rpt</DependentUpon>
-      <SubType>Component</SubType>
-    </Compile>
-    <Compile Include="80 Rpt\Rpt00.vb">
-      <DependentUpon>Rpt00.rpt</DependentUpon>
-      <AutoGen>True</AutoGen>
-      <SubType>Component</SubType>
-      <DesignTime>True</DesignTime>
-    </Compile>
-    <Compile Include="80 Rpt\Rpt09.vb">
-      <DependentUpon>Rpt09.rpt</DependentUpon>
-      <AutoGen>True</AutoGen>
-      <SubType>Component</SubType>
-      <DesignTime>True</DesignTime>
-    </Compile>
-    <Compile Include="80 Rpt\Rpt08.vb">
-      <DependentUpon>Rpt08.rpt</DependentUpon>
-      <AutoGen>True</AutoGen>
-      <SubType>Component</SubType>
-      <DesignTime>True</DesignTime>
-    </Compile>
-    <Compile Include="80 Rpt\Rpt07.vb">
-      <DependentUpon>Rpt07.rpt</DependentUpon>
-      <AutoGen>True</AutoGen>
-      <SubType>Component</SubType>
-      <DesignTime>True</DesignTime>
-    </Compile>
-    <Compile Include="80 Rpt\Rpt06.vb">
-      <DependentUpon>Rpt06.rpt</DependentUpon>
-      <AutoGen>True</AutoGen>
-      <SubType>Component</SubType>
-      <DesignTime>True</DesignTime>
-    </Compile>
-    <Compile Include="80 Rpt\Rpt24.vb">
-      <DependentUpon>Rpt24.rpt</DependentUpon>
-      <AutoGen>True</AutoGen>
-      <SubType>Component</SubType>
-      <DesignTime>True</DesignTime>
-    </Compile>
-    <Compile Include="80 Rpt\Rpt25.vb">
-      <DependentUpon>Rpt25.rpt</DependentUpon>
-      <AutoGen>True</AutoGen>
-      <SubType>Component</SubType>
-      <DesignTime>True</DesignTime>
-    </Compile>
-    <Compile Include="80 Rpt\Rpt31.vb">
-      <DependentUpon>Rpt31.rpt</DependentUpon>
-      <AutoGen>True</AutoGen>
-      <SubType>Component</SubType>
-      <DesignTime>True</DesignTime>
-    </Compile>
-    <Compile Include="80 Rpt\Rpt30.vb">
-      <DependentUpon>Rpt30.rpt</DependentUpon>
-      <AutoGen>True</AutoGen>
-      <SubType>Component</SubType>
-      <DesignTime>True</DesignTime>
-    </Compile>
-    <Compile Include="80 Rpt\Rpt29.vb">
-      <DependentUpon>Rpt29.rpt</DependentUpon>
-      <AutoGen>True</AutoGen>
-      <SubType>Component</SubType>
-      <DesignTime>True</DesignTime>
-    </Compile>
-    <Compile Include="80 Rpt\Rpt28.vb">
-      <DependentUpon>Rpt28.rpt</DependentUpon>
-      <AutoGen>True</AutoGen>
-      <SubType>Component</SubType>
-      <DesignTime>True</DesignTime>
-    </Compile>
-    <Compile Include="80 Rpt\Rpt27.vb">
-      <DependentUpon>Rpt27.rpt</DependentUpon>
-      <AutoGen>True</AutoGen>
-      <SubType>Component</SubType>
-      <DesignTime>True</DesignTime>
-    </Compile>
-    <Compile Include="80 Rpt\Rpt26.vb">
-      <DependentUpon>Rpt26.rpt</DependentUpon>
-      <AutoGen>True</AutoGen>
-      <SubType>Component</SubType>
-      <DesignTime>True</DesignTime>
-    </Compile>
-    <Compile Include="80 Rpt\Rpt23.vb">
-      <DependentUpon>Rpt23.rpt</DependentUpon>
-      <AutoGen>True</AutoGen>
-      <SubType>Component</SubType>
-      <DesignTime>True</DesignTime>
-    </Compile>
-    <Compile Include="80 Rpt\Rpt22.vb">
-      <DependentUpon>Rpt22.rpt</DependentUpon>
-      <AutoGen>True</AutoGen>
-      <SubType>Component</SubType>
-      <DesignTime>True</DesignTime>
-    </Compile>
-    <Compile Include="80 Rpt\Rpt21.vb">
-      <DependentUpon>Rpt21.rpt</DependentUpon>
-      <AutoGen>True</AutoGen>
-      <SubType>Component</SubType>
-      <DesignTime>True</DesignTime>
-    </Compile>
-    <Compile Include="80 Rpt\Rpt20.vb">
-      <DependentUpon>Rpt20.rpt</DependentUpon>
-      <AutoGen>True</AutoGen>
-      <SubType>Component</SubType>
-      <DesignTime>True</DesignTime>
-    </Compile>
-    <Compile Include="80 Rpt\Rpt19.vb">
-      <DependentUpon>Rpt19.rpt</DependentUpon>
-      <AutoGen>True</AutoGen>
-      <SubType>Component</SubType>
-      <DesignTime>True</DesignTime>
-    </Compile>
-    <Compile Include="80 Rpt\Rpt18.vb">
-      <DependentUpon>Rpt18.rpt</DependentUpon>
-      <AutoGen>True</AutoGen>
-      <SubType>Component</SubType>
-      <DesignTime>True</DesignTime>
-    </Compile>
-    <Compile Include="80 Rpt\Rpt17.vb">
-      <DependentUpon>Rpt17.rpt</DependentUpon>
-      <AutoGen>True</AutoGen>
-      <SubType>Component</SubType>
-      <DesignTime>True</DesignTime>
-    </Compile>
-    <Compile Include="80 Rpt\Rpt16.vb">
-      <DependentUpon>Rpt16.rpt</DependentUpon>
-      <AutoGen>True</AutoGen>
-      <SubType>Component</SubType>
-      <DesignTime>True</DesignTime>
-    </Compile>
-    <Compile Include="80 Rpt\Rpt15.vb">
-      <DependentUpon>Rpt15.rpt</DependentUpon>
-      <AutoGen>True</AutoGen>
-      <SubType>Component</SubType>
-      <DesignTime>True</DesignTime>
-    </Compile>
-    <Compile Include="80 Rpt\Rpt14.vb">
-      <DependentUpon>Rpt14.rpt</DependentUpon>
-      <AutoGen>True</AutoGen>
-      <SubType>Component</SubType>
-      <DesignTime>True</DesignTime>
-    </Compile>
-    <Compile Include="80 Rpt\Rpt13.vb">
-      <DependentUpon>Rpt13.rpt</DependentUpon>
-      <AutoGen>True</AutoGen>
-      <SubType>Component</SubType>
-      <DesignTime>True</DesignTime>
-    </Compile>
-    <Compile Include="80 Rpt\Rpt12.vb">
-      <DependentUpon>Rpt12.rpt</DependentUpon>
-      <AutoGen>True</AutoGen>
-      <SubType>Component</SubType>
-      <DesignTime>True</DesignTime>
-    </Compile>
-    <Compile Include="80 Rpt\Rpt11.vb">
-      <DependentUpon>Rpt11.rpt</DependentUpon>
-      <AutoGen>True</AutoGen>
-      <SubType>Component</SubType>
-      <DesignTime>True</DesignTime>
-    </Compile>
-    <Compile Include="ApplicationEvents.vb" />
-    <Compile Include="Class1.vb" />
     <Compile Include="98 Settings Frm\FormX1.Designer.vb">
       <DependentUpon>FormX1.vb</DependentUpon>
     </Compile>
     <Compile Include="98 Settings Frm\FormX1.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="98 Settings Frm\QuestionNanswers.Designer.vb">
+      <DependentUpon>QuestionNanswers.vb</DependentUpon>
+    </Compile>
+    <Compile Include="98 Settings Frm\QuestionNanswers.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ApplicationEvents.vb" />
+    <Compile Include="Class1.vb" />
     <Compile Include="Crypto.vb" />
     <Compile Include="Excel4d.vb" />
-    <Compile Include="FormXmdi.vb">
+    <Compile Include="00 Main Frm\FormXmdi.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FormXmdi.Designer.vb">
+    <Compile Include="00 Main Frm\FormXmdi.Designer.vb">
       <DependentUpon>FormXmdi.vb</DependentUpon>
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="98 Settings Frm\FormX2.Designer.vb">
-      <DependentUpon>FormX2.vb</DependentUpon>
-    </Compile>
-    <Compile Include="98 Settings Frm\FormX2.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="01 Frm\Form03.Designer.vb">
@@ -428,37 +272,13 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
-    <Compile Include="98 Settings Frm\QuestionNanswers.Designer.vb">
-      <DependentUpon>QuestionNanswers.vb</DependentUpon>
+    <Compile Include="00 Main Frm\Rosters.Designer.vb">
+      <DependentUpon>Rosters.vb</DependentUpon>
     </Compile>
-    <Compile Include="98 Settings Frm\QuestionNanswers.vb">
+    <Compile Include="00 Main Frm\Rosters.vb">
       <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="80 Rpt\Rpt05.vb">
-      <DependentUpon>Rpt05.rpt</DependentUpon>
-      <AutoGen>True</AutoGen>
-      <SubType>Component</SubType>
-      <DesignTime>True</DesignTime>
-    </Compile>
-    <Compile Include="80 Rpt\Rpt10.vb">
-      <DependentUpon>Rpt10.rpt</DependentUpon>
-      <AutoGen>True</AutoGen>
-      <SubType>Component</SubType>
-      <DesignTime>True</DesignTime>
     </Compile>
     <Compile Include="tables.vb" />
-    <Compile Include="98 Settings Frm\Upgrade.designer.vb">
-      <DependentUpon>Upgrade.vb</DependentUpon>
-    </Compile>
-    <Compile Include="98 Settings Frm\Upgrade.vb">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="80 Rpt\Form31.Designer.vb">
-      <DependentUpon>Form31.vb</DependentUpon>
-    </Compile>
-    <Compile Include="80 Rpt\Form31.vb">
-      <SubType>Form</SubType>
-    </Compile>
     <Compile Include="TablesWash.vb" />
     <Compile Include="UserControl1.Designer.vb">
       <DependentUpon>UserControl1.vb</DependentUpon>
@@ -468,8 +288,26 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="00 Main Frm\COAttendance.resx">
+      <DependentUpon>COAttendance.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="00 Main Frm\SurveyAreaCrud.resx">
       <DependentUpon>SurveyAreaCrud.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="00 Main Frm\SwitchBoard.resx">
+      <DependentUpon>SwitchBoard.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="00 Main Frm\UCProfile.resx">
+      <DependentUpon>UCProfile.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="00 Main Frm\Upgrade.resx">
+      <DependentUpon>Upgrade.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="00 Main Frm\VillageVisRoster.resx">
+      <DependentUpon>VillageVisRoster.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="00 Main Frm\VOCrud.resx">
+      <DependentUpon>VOCrud.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="01 Frm\Form04.resx">
       <DependentUpon>Form04.vb</DependentUpon>
@@ -492,165 +330,38 @@
     <EmbeddedResource Include="01 Frm\Form10.resx">
       <DependentUpon>Form10.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="01 Frm\HowTo.resx">
+    <EmbeddedResource Include="00 Main Frm\HowTo.resx">
       <DependentUpon>HowTo.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="01 Frm\QuestionAnsEntry.resx">
+    <EmbeddedResource Include="00 Main Frm\QuestionAnsEntry.resx">
       <DependentUpon>QuestionAnsEntry.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="01 Frm\QuestionEntry.resx">
+    <EmbeddedResource Include="00 Main Frm\QuestionEntry.resx">
       <DependentUpon>QuestionEntry.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="01 Frm\QuestionHeaderInformation.resx">
+    <EmbeddedResource Include="00 Main Frm\QuestionHeaderInformation.resx">
       <DependentUpon>QuestionHeaderInformation.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="01 Frm\QuestionHeads.resx">
+    <EmbeddedResource Include="00 Main Frm\QuestionHeads.resx">
       <DependentUpon>QuestionHeads.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="01 Frm\QuestionsAnsXlsExport.resx">
+    <EmbeddedResource Include="00 Main Frm\QuestionsAnsXlsExport.resx">
       <DependentUpon>QuestionsAnsXlsExport.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="01 Frm\ShowGivenAns.resx">
+    <EmbeddedResource Include="00 Main Frm\ShowGivenAns.resx">
       <DependentUpon>ShowGivenAns.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="80 Rpt\Form32.resx">
-      <DependentUpon>Form32.vb</DependentUpon>
+    <EmbeddedResource Include="00 Main Frm\FormXmdi.resx">
+      <DependentUpon>FormXmdi.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="80 Rpt\Rpt04.rpt">
-      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
-      <LastGenOutput>Rpt04.vb</LastGenOutput>
-    </EmbeddedResource>
-    <EmbeddedResource Include="80 Rpt\Rpt03.rpt">
-      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
-      <LastGenOutput>Rpt03.vb</LastGenOutput>
-    </EmbeddedResource>
-    <EmbeddedResource Include="80 Rpt\Rpt02.rpt">
-      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
-      <LastGenOutput>Rpt02.vb</LastGenOutput>
-    </EmbeddedResource>
-    <EmbeddedResource Include="80 Rpt\Rpt01.2.rpt">
-      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
-      <LastGenOutput>Rpt01.2.vb</LastGenOutput>
-    </EmbeddedResource>
-    <EmbeddedResource Include="80 Rpt\Rpt01.rpt">
-      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
-      <LastGenOutput>Rpt01.vb</LastGenOutput>
-    </EmbeddedResource>
-    <EmbeddedResource Include="80 Rpt\Rpt00.rpt">
-      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
-      <LastGenOutput>Rpt00.vb</LastGenOutput>
-    </EmbeddedResource>
-    <EmbeddedResource Include="80 Rpt\Rpt09.rpt">
-      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
-      <LastGenOutput>Rpt09.vb</LastGenOutput>
-    </EmbeddedResource>
-    <EmbeddedResource Include="80 Rpt\Rpt08.rpt">
-      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
-      <LastGenOutput>Rpt08.vb</LastGenOutput>
-    </EmbeddedResource>
-    <EmbeddedResource Include="80 Rpt\Rpt07.rpt">
-      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
-      <LastGenOutput>Rpt07.vb</LastGenOutput>
-    </EmbeddedResource>
-    <EmbeddedResource Include="80 Rpt\Rpt06.rpt">
-      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
-      <LastGenOutput>Rpt06.vb</LastGenOutput>
-    </EmbeddedResource>
-    <EmbeddedResource Include="80 Rpt\Rpt24.rpt">
-      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
-      <LastGenOutput>Rpt24.vb</LastGenOutput>
-    </EmbeddedResource>
-    <EmbeddedResource Include="80 Rpt\Rpt25.rpt">
-      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
-      <LastGenOutput>Rpt25.vb</LastGenOutput>
-    </EmbeddedResource>
-    <EmbeddedResource Include="80 Rpt\Rpt31.rpt">
-      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
-      <LastGenOutput>Rpt31.vb</LastGenOutput>
-    </EmbeddedResource>
-    <EmbeddedResource Include="80 Rpt\Rpt30.rpt">
-      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
-      <LastGenOutput>Rpt30.vb</LastGenOutput>
-    </EmbeddedResource>
-    <EmbeddedResource Include="80 Rpt\Rpt29.rpt">
-      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
-      <LastGenOutput>Rpt29.vb</LastGenOutput>
-    </EmbeddedResource>
-    <EmbeddedResource Include="80 Rpt\Rpt28.rpt">
-      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
-      <LastGenOutput>Rpt28.vb</LastGenOutput>
-    </EmbeddedResource>
-    <EmbeddedResource Include="80 Rpt\Rpt27.rpt">
-      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
-      <LastGenOutput>Rpt27.vb</LastGenOutput>
-    </EmbeddedResource>
-    <EmbeddedResource Include="80 Rpt\Rpt26.rpt">
-      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
-      <LastGenOutput>Rpt26.vb</LastGenOutput>
-    </EmbeddedResource>
-    <EmbeddedResource Include="80 Rpt\Rpt23.rpt">
-      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
-      <LastGenOutput>Rpt23.vb</LastGenOutput>
-    </EmbeddedResource>
-    <EmbeddedResource Include="80 Rpt\Rpt22.rpt">
-      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
-      <LastGenOutput>Rpt22.vb</LastGenOutput>
-    </EmbeddedResource>
-    <EmbeddedResource Include="80 Rpt\Rpt21.rpt">
-      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
-      <LastGenOutput>Rpt21.vb</LastGenOutput>
-    </EmbeddedResource>
-    <EmbeddedResource Include="80 Rpt\Rpt20.rpt">
-      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
-      <LastGenOutput>Rpt20.vb</LastGenOutput>
-    </EmbeddedResource>
-    <EmbeddedResource Include="80 Rpt\Rpt19.rpt">
-      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
-      <LastGenOutput>Rpt19.vb</LastGenOutput>
-    </EmbeddedResource>
-    <EmbeddedResource Include="80 Rpt\Rpt18.rpt">
-      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
-      <LastGenOutput>Rpt18.vb</LastGenOutput>
-    </EmbeddedResource>
-    <EmbeddedResource Include="80 Rpt\Rpt17.rpt">
-      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
-      <LastGenOutput>Rpt17.vb</LastGenOutput>
-    </EmbeddedResource>
-    <EmbeddedResource Include="80 Rpt\Rpt16.rpt">
-      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
-      <LastGenOutput>Rpt16.vb</LastGenOutput>
-    </EmbeddedResource>
-    <EmbeddedResource Include="80 Rpt\Rpt15.rpt">
-      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
-      <LastGenOutput>Rpt15.vb</LastGenOutput>
-    </EmbeddedResource>
-    <EmbeddedResource Include="80 Rpt\Rpt14.rpt">
-      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
-      <LastGenOutput>Rpt14.vb</LastGenOutput>
-    </EmbeddedResource>
-    <EmbeddedResource Include="80 Rpt\Rpt13.rpt">
-      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
-      <LastGenOutput>Rpt13.vb</LastGenOutput>
-    </EmbeddedResource>
-    <EmbeddedResource Include="80 Rpt\Rpt12.rpt">
-      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
-      <LastGenOutput>Rpt12.vb</LastGenOutput>
-    </EmbeddedResource>
-    <EmbeddedResource Include="80 Rpt\Rpt11.rpt">
-      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
-      <LastGenOutput>Rpt11.vb</LastGenOutput>
+    <EmbeddedResource Include="01 Frm\Form03.resx">
+      <DependentUpon>Form03.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="98 Settings Frm\FormX1.resx">
       <DependentUpon>FormX1.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FormXmdi.resx">
-      <DependentUpon>FormXmdi.vb</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="98 Settings Frm\FormX2.resx">
-      <DependentUpon>FormX2.vb</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="01 Frm\Form03.resx">
-      <DependentUpon>Form03.vb</DependentUpon>
+    <EmbeddedResource Include="98 Settings Frm\QuestionNanswers.resx">
+      <DependentUpon>QuestionNanswers.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="MenuFrm.resx">
       <DependentUpon>MenuFrm.vb</DependentUpon>
@@ -662,22 +373,8 @@
       <SubType>Designer</SubType>
       <LastGenOutput>Resources.Designer.vb</LastGenOutput>
     </EmbeddedResource>
-    <EmbeddedResource Include="98 Settings Frm\QuestionNanswers.resx">
-      <DependentUpon>QuestionNanswers.vb</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="98 Settings Frm\Upgrade.resx">
-      <DependentUpon>Upgrade.vb</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="80 Rpt\Form31.resx">
-      <DependentUpon>Form31.vb</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="80 Rpt\Rpt05.rpt">
-      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
-      <LastGenOutput>Rpt05.vb</LastGenOutput>
-    </EmbeddedResource>
-    <EmbeddedResource Include="80 Rpt\Rpt10.rpt">
-      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
-      <LastGenOutput>Rpt10.vb</LastGenOutput>
+    <EmbeddedResource Include="00 Main Frm\Rosters.resx">
+      <DependentUpon>Rosters.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UserControl1.resx">
       <DependentUpon>UserControl1.vb</DependentUpon>
@@ -699,13 +396,18 @@
     <Content Include="99 icons\favicon %282%29.ico" />
     <Content Include="99 icons\favicon.ico" />
     <Content Include="99 icons\Idea.ico" />
+    <None Include="Resources\UpgradeIconBig.png" />
+    <None Include="Resources\bg.bmp" />
+    <None Include="Resources\fresh.png" />
+    <None Include="Resources\glass.png" />
+    <None Include="Resources\Metal_background_A.jpg" />
+    <None Include="Resources\white_cubes_pattern.jpg" />
     <None Include="Resources\logo223.png" />
     <None Include="Resources\IDEA-Logopng.png" />
     <None Include="Resources\excel_icon.jpeg" />
     <None Include="Resources\excel-xls-icon.png" />
     <None Include="Resources\Arrioch-Senary-Office-excel-xls.ico" />
     <None Include="Resources\download.png" />
-    <None Include="Resources\Black-Hole-ipad-3-wallpaper-ipad-wallpaper-retina-display-wallpaper-the-new-ipad-wallpaper-2048x2048-wallpapers-background-patterns-pattern-wallpapers-1920x1080.jpg" />
     <None Include="Resources\bg1.png" />
     <None Include="Resources\menu01.png" />
     <None Include="Resources\feature-update.png" />
@@ -766,6 +468,13 @@
     </BootstrapperPackage>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
+  <PropertyGroup>
+    <PostBuildEvent>
+    </PostBuildEvent>
+  </PropertyGroup>
+  <PropertyGroup>
+    <PreBuildEvent>"$(ProjectDir)My Project\IncBuildNo.exe"</PreBuildEvent>
+  </PropertyGroup>
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
   <Target Name="BeforeBuild">

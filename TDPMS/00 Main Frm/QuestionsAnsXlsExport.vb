@@ -6,21 +6,28 @@ Public Class QuestionsAnsXlsExport
     Public T9 As String = "GivenAns"
     'Public F9 As String() = {"Id", "Ref", "Hid", "Sn", "Ques", "AnsListid", "TypeAns", "GivenAns"}
     Public TN As String = "QuestionGeneralInformation"
+    '                        {"Id", "FormNo", "Mobilizer_Name", "Dt", "Province", "District", "Tehsil", "UC", "Village", "Sub_Village"}
     'Public TF As String() = {"Id", "c1", "c2", "c3", "c4", "c5", "c6", "c7", "c8", "c9", "c10", "c11"}
     Public T1 As String = "QuestionHead"
     Public T2 As String = "QuestionAns"
     'Public F As String() = {"Id", "Hid", "Sn", "Ques", "TypeOfAns", "AnsList"}
     Dim rowsCount As Integer = 0
     Private Sub QuestionsAnsXlsExport_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        Me.MdiParent = FormXmdi
-        TextBox1.Text = loc
-        rowsCount = GDs("Id,c1 as Ref,c8 as Village", TN, " 1=1 order by Id").Tables(TN).Rows.Count
-        refreshEveryThing()
-        If dg.Rows.Count <> 0 Then dg.Rows(0).Selected = False
+        Try
+            Me.MdiParent = FormXmdi
+            ttcondition.Text = My.Settings.condition
+            TextBox1.Text = loc
+            rowsCount = GDs("Id,FormNo as Ref,Village", TN, " 1=1 order by Id desc").Tables(TN).Rows.Count
+            refreshEveryThing()
+            If dg.Rows.Count <> 0 Then dg.Rows(0).Selected = False
+        Catch ex As Exception
+
+        End Try
+
     End Sub
     Sub refreshEveryThing()
         TextBox1.Text = loc
-        dg.DataSource = GDs("Id,c1 as Ref,c8 as Village", TN, " 1=1 order by Id").Tables(TN)
+        dg.DataSource = GDs("Id,FormNo as Ref,Village", TN, " 1=1 order by Id desc").Tables(TN)
         dg.Columns(0).Visible = False
         If dg.Rows.Count <> 0 Then dg.Rows(0).Selected = False
     End Sub
@@ -34,10 +41,10 @@ Public Class QuestionsAnsXlsExport
     Private Sub SelectionChanged(ByVal sender As Object, ByVal e As EventArgs) Handles dg.SelectionChanged
         If dg.Rows.Count <> rowsCount Then Exit Sub
         If dg.SelectedRows.Count <> 1 Then Exit Sub
-        'dg1.DataSource = GDs("Id,ref,Hid,sn,Ques,GivenAns", T9, " ref='" & dg.CurrentRow.Cells(1).Value & "' order by Sn").Tables(T9)
-        'dg1.Columns(0).Visible = False : dg1.Columns(1).Visible = False : dg1.Columns(2).Visible = False
-        'dg1.Columns(3).FillWeight = 15
-        filldg1("")
+        dg1.DataSource = GDs("Id,ref,Hid,sn,Ques,GivenAns", T9, " ref='" & dg.CurrentRow.Cells(1).Value & "' order by Sn").Tables(T9)
+        dg1.Columns(0).Visible = False : dg1.Columns(1).Visible = False : dg1.Columns(2).Visible = False
+        dg1.Columns(3).FillWeight = 15
+        'filldg1("")
     End Sub
     Sub filldg1(condition As String)
         'If dg1.Columns.Count <> 0 Then dg1.Columns.Remove("Id") : dg1.Columns.Remove("ref") : dg1.Columns.Remove("Hid") : dg1.Columns.Remove("sn") : dg1.Columns.Remove("Ques") : dg1.Columns.Remove("GivenAns")
@@ -56,8 +63,8 @@ Public Class QuestionsAnsXlsExport
         Dim tHid As String = ""
         Dim r As Integer = 0
 
-        Dim h1 As String() = {"ref #", "Enumerator Name", "Recording Agency", "Date of Recording", "District", "Tehsil / Taluka", "Union Council", "Village ", "Province", "Obstruction to Access", "Type of Settlement"}
-        dt = GDs(TN, "c1='" & dg.CurrentRow.Cells(1).Value & "' order by Id").Tables(TN)
+        Dim h1 As String() = {"ref #", "Recording Agency", "Enumerator Name", "Date of Recording", "District", "Tehsil / Taluka", "Union Council", "Village ", "Province", "Obstruction to Access", "Type of Settlement"}
+        dt = GDs(TN, "FormNo='" & dg.CurrentRow.Cells(1).Value & "' order by Id").Tables(TN)
         dg1.Rows.Add()
         dg1.Rows(0).Cells(0).Value = ""
         dg1.Rows(0).Cells(1).Value = "A"
@@ -74,7 +81,7 @@ Public Class QuestionsAnsXlsExport
             End With
         Next
 
-        dt = GDs(T2, "1=1 order by Sn").Tables(T2)
+        dt = GDs(T2, "ref='" & FormXmdi.llSurveyRef.Text & "' order by Sn").Tables(T2)
         '{"Id", "Hid", "Sn", "Ques", "TypeOfAns", "AnsList"}
         For I = 0 To dt.Rows.Count - 1
             dg1.Rows.Add()
@@ -112,9 +119,14 @@ H1:
 
 
     Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
+        dg1.Enabled = False
+        Button1.Enabled = False
         Dim x As New Excel4d
         If dg1.RowCount = 0 Then Exit Sub
-        x.MakeXslFile(dgridViewTods(dg1), TextBox1.Text, "Survey" & ext, False, True, False)
+        x.MakeXslFile(dgridViewTods(dg1), TextBox1.Text, "", False, True, False)
+        clrDg()
+        dg1.Enabled = True
+        Button1.Enabled = True
     End Sub
     Dim dx As New DataSet
     Private Function dgridViewTods(ByVal dgv As DataGridView) As DataSet
@@ -151,6 +163,7 @@ H1:
         End Try
     End Function
     Sub clrDg()
+        dg1.DataSource = Nothing
         If dg1.Rows.Count <> 0 Then dg1.Rows.Clear()
         If dg1.ColumnCount <> 0 Then dg1.Columns.Clear()
 
@@ -167,34 +180,48 @@ H1:
     Private Sub CheckBox2_CheckedChanged(sender As Object, e As EventArgs) Handles CheckBox2.CheckedChanged
         clrDg()
         Dim dt2 As DataTable
-        dt = GDs("c1,c8 ", TN, " 1=1 order by c1").Tables(TN)
+        'Public TN As String = "QuestionGeneralInformation"
+        Dim cells As String() = {"Id", "FormNo", "Mobilizer_Name", "Dt", "Province", "District", "Tehsil", "UC", "Village", "Sub_Village"}
+        'Public TF As String() = {"Id", "c1", "c2", "c3", "c4", "c5", "c6", "c7", "c8", "c9", "c10", "c11"}
+        Dim fn As String = dg.CurrentRow.Cells("Ref").Value
+        fn = fn.Split("-")(0)
+        Dim cond As String = " FormNo like '" & fn & "%' and " & ttcondition.Text
+        dt = GDs(TN, cond & " order by FormNo").Tables(TN)
         dg1.Columns.Add("Sn", "Sn")
         dg1.Columns.Add("Question", "Question")
+        If IsNothing(dt) Then Exit Sub
+
+        If dt.Rows.Count = 0 Then Exit Sub
         For i = 0 To dt.Rows.Count - 1
             With dt.Rows(i)
-                dg1.Columns.Add(.Item("c1"), .Item("c1"))
+                dg1.Columns.Add(.Item("FormNo"), .Item("FormNo"))
             End With
         Next
 
+        For p = 2 To UBound(cells)
+            dg1.Rows.Add()
+            dt = GDs(TN, cond).Tables(TN)
+            With dg1.Rows(dg1.Rows.Count - 1)
+                For j = 0 To dt.Rows.Count - 1
+                    .Cells(dt.Rows(j).Item("FormNo")).Value = dt.Rows(j).Item(cells(p))
+                Next
+            End With
+        Next
 
-        dg1.Rows.Add()
-        dt = GDs("c1,c8 ", TN, " 1=1 order by c1").Tables(TN)
-        With dg1.Rows(dg1.Rows.Count - 1)
-            For j = 0 To dt.Rows.Count - 1
-                .Cells(dt.Rows(j).Item("c1")).Value = dt.Rows(j).Item("c8")
-            Next
-        End With
-
-
-        dt = GDs(T2, " TypeOfAns<>3 order by Sn").Tables(T2)
+        dt = GDs(T2, "ref='" & fn & "' and TypeOfAns<>3 order by Sn").Tables(T2)
         For i = 0 To dt.Rows.Count - 1
             dg1.Rows.Add()
             With dg1.Rows(dg1.Rows.Count - 1)
                 .Cells(0).Value = dt.Rows(i).Item("Sn")
                 .Cells(1).Value = dt.Rows(i).Item("Ques")
-                dt2 = GDs(T9, " Sn = " & dt.Rows(i).Item("Sn") & "  order by Sn").Tables(T9)
+                dt2 = GDs(T9, "ref like '" & fn & "%' and Sn = " & dt.Rows(i).Item("Sn") & "  order by Sn").Tables(T9)
                 For j = 0 To dt2.Rows.Count - 1
-                    .Cells(dt2.Rows(j).Item("ref")).Value = dt2.Rows(j).Item("GivenAns")
+                    Try
+                         .Cells(dt2.Rows(j).Item("ref")).Value = dt2.Rows(j).Item("GivenAns")
+                    Catch ex As Exception
+
+                    End Try
+
                 Next
             End With
         Next

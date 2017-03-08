@@ -1,6 +1,10 @@
 ﻿Imports System.Windows.Forms
 
 Public Class HowTo
+    Public TN As String = "MemoNote"
+    Public TF As String() = {"Id", "MemoNote"}
+    Public TV As String() = {"", ""}
+    Public TS As String() = {"N", "M"}
     Private Sub HowTo_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         Me.MdiParent = FormXmdi
         createTable(TN, TF, TS)
